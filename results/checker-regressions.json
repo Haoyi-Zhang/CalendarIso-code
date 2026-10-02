@@ -1,0 +1,117 @@
+{
+  "status": "checker_regressions_passed",
+  "execution_note": "Both pre-repair observations and post-repair outcomes were obtained by executing the listed deterministic toy cases locally; they are not static predictions.",
+  "single_core_boolean_offset": {
+    "case": {
+      "calendar": [
+        0,
+        1
+      ],
+      "phase": 0,
+      "borrower": 0,
+      "length": 2,
+      "tenants": [
+        {
+          "backlog": 2,
+          "lead": 0,
+          "capacity": 2,
+          "tokens": 0,
+          "bucket": 1,
+          "period": 3,
+          "refill": 3
+        },
+        {
+          "backlog": 0,
+          "lead": 0,
+          "capacity": 1,
+          "tokens": 1,
+          "bucket": 1,
+          "period": 3,
+          "refill": 2
+        }
+      ],
+      "valid_violation_offset": 1,
+      "mutation": "violation_offset = true"
+    },
+    "pre_repair_observed_acceptance": true,
+    "post_repair_observed_acceptance": false
+  },
+  "single_core_post_failure_event": {
+    "case": {
+      "calendar": [
+        1
+      ],
+      "phase": 0,
+      "borrower": 0,
+      "length": 2,
+      "tenants": [
+        {
+          "backlog": 2,
+          "lead": 0,
+          "capacity": 2,
+          "tokens": 0,
+          "bucket": 1,
+          "period": 4,
+          "refill": 4
+        },
+        {
+          "backlog": 1,
+          "lead": 0,
+          "capacity": 1,
+          "tokens": 0,
+          "bucket": 1,
+          "period": 4,
+          "refill": 4
+        }
+      ],
+      "valid_violation_offset": 0,
+      "mutation": {
+        "arrivals": [
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pre_repair_observed_acceptance": true,
+    "post_repair_observed_acceptance": false,
+    "reason": "The checker now validates a prefix-scoped witness and forbids events after the declared first failure; exact type checks also reject booleans."
+  },
+  "multicore_alias_role": {
+    "case": {
+      "calendar": [
+        [
+          0
+        ]
+      ],
+      "phase": 0,
+      "tenants": [
+        {
+          "backlog": 1,
+          "lead": 0,
+          "capacity": 1,
+          "tokens": 0,
+          "bucket": 1,
+          "period": 1,
+          "refill": 1
+        }
+      ],
+      "plan_expression": "plan = state[calendar]"
+    },
+    "pre_repair_observed_acceptance": false,
+    "post_repair_observed_acceptance": true,
+    "deep_copy_acceptance": true,
+    "equal_tuple_acceptance": true,
+    "genuine_over_backlog_plan_rejected": true
+  },
+  "unit_test_methods": 18,
+  "bounded_case_counts": {
+    "single_core": 31590,
+    "multicore": 35152,
+    "atomic": 116,
+    "total": 66858
+  },
+  "bounded_case_scientific_fields_unchanged": true
+}

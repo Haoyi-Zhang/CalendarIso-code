@@ -1,0 +1,32 @@
+{
+  "status": "finite_reproduction_passed",
+  "scientific_completion": false,
+  "programs": [
+    {
+      "program": "pilot.py",
+      "exit_code": 0,
+      "cases": 31590,
+      "scientific_fields_match": true
+    },
+    {
+      "program": "plan_pilot.py",
+      "exit_code": 0,
+      "cases": 35152,
+      "scientific_fields_match": true
+    },
+    {
+      "program": "atomic_pilot.py",
+      "exit_code": 0,
+      "cases": 116,
+      "scientific_fields_match": true
+    }
+  ],
+  "unit_test_methods": 18,
+  "seeded_general_plan_instances": 300,
+  "seed": 731203,
+  "child_processes_concurrent": 1,
+  "measured_child_cpu_seconds": 5.4761299999999995,
+  "wall_seconds": 5.482398787999955,
+  "max_child_rss_kib": 110376,
+  "meaning": "Agreement of finite checks and tests; not a proof-assistant result or publication-readiness decision."
+}

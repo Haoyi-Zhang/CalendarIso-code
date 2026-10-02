@@ -1,0 +1,112 @@
+{
+  "status": "code_audit_passed",
+  "python_files": 11,
+  "nonblank_noncomment_lines": 1104,
+  "compileall_exit_code": 0,
+  "unit_test_methods": 18,
+  "unit_test_exit_code": 0,
+  "bounded_reproduction_exit_code": 0,
+  "producer_checker_separation": {
+    "src/oracle.py_imports_admission": false,
+    "src/plan_oracle.py_imports_commitment": false
+  },
+  "network_client_imports_in_src": [],
+  "dynamic_execution_tokens_in_src": {
+    "eval_calls": 0,
+    "exec_calls": 0
+  },
+  "imports": {
+    "src/plan_pilot.py": [
+      "__future__",
+      "admission",
+      "argparse",
+      "commitment",
+      "itertools",
+      "json",
+      "os",
+      "pathlib",
+      "plan_oracle",
+      "resource",
+      "time"
+    ],
+    "src/atomic_pilot.py": [
+      "argparse",
+      "atomic",
+      "atomic_oracle",
+      "itertools",
+      "json",
+      "os",
+      "pathlib",
+      "resource",
+      "time"
+    ],
+    "src/pilot.py": [
+      "__future__",
+      "admission",
+      "argparse",
+      "itertools",
+      "json",
+      "oracle",
+      "os",
+      "pathlib",
+      "resource",
+      "time"
+    ],
+    "src/commitment.py": [
+      "__future__",
+      "admission",
+      "dataclasses",
+      "typing"
+    ],
+    "src/plan_oracle.py": [
+      "__future__",
+      "itertools",
+      "typing"
+    ],
+    "src/atomic_oracle.py": [
+      "__future__",
+      "functools",
+      "itertools"
+    ],
+    "src/atomic.py": [
+      "__future__"
+    ],
+    "src/admission.py": [
+      "__future__",
+      "dataclasses",
+      "typing"
+    ],
+    "src/oracle.py": [
+      "__future__",
+      "typing"
+    ],
+    "reproduce.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "os",
+      "pathlib",
+      "resource",
+      "subprocess",
+      "sys",
+      "tempfile",
+      "time"
+    ],
+    "tests/test_contracts.py": [
+      "admission",
+      "atomic",
+      "atomic_oracle",
+      "commitment",
+      "copy",
+      "itertools",
+      "json",
+      "oracle",
+      "pathlib",
+      "plan_oracle",
+      "random",
+      "sys",
+      "unittest"
+    ]
+  },
+  "meaning": "Static source hygiene plus executed compilation, unit tests, and bounded reproduction; not a proof of absence of all defects."
+}

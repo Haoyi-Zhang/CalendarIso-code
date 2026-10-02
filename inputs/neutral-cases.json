@@ -1,0 +1,288 @@
+{
+  "event_order": "snapshot after current arrivals; future refill then admission then actual/reference service",
+  "cases": [
+    {
+      "id": "future-unit",
+      "calendar": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "plan": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "meaning": "currently empty tenant 1 can admit at offset 1 and immediately needs its reservation",
+      "kind": "fixed_commitment",
+      "snapshot": {
+        "calendar": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 2,
+            "lead": 0,
+            "capacity": 2,
+            "tokens": 1,
+            "bucket": 1,
+            "period": 3,
+            "refill": 2
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 1,
+            "bucket": 1,
+            "period": 3,
+            "refill": 2
+          }
+        ]
+      },
+      "expected_safe": false
+    },
+    {
+      "id": "quiet-token",
+      "calendar": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "plan": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "meaning": "tenant 1 empty, no tokens, next refill offset 3; same plan can be safe",
+      "kind": "fixed_commitment",
+      "snapshot": {
+        "calendar": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 2,
+            "lead": 0,
+            "capacity": 2,
+            "tokens": 1,
+            "bucket": 1,
+            "period": 3,
+            "refill": 2
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 1,
+            "period": 3,
+            "refill": 3
+          }
+        ]
+      },
+      "expected_safe": true
+    },
+    {
+      "id": "full-reference-buffer",
+      "calendar": [
+        [
+          1
+        ]
+      ],
+      "plan": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "meaning": "tenant 1 backlog=0, lead=capacity=1, tokens=1; reference frees room at offset 0, one arrival at 1 defeats borrowing",
+      "kind": "fixed_commitment",
+      "snapshot": {
+        "calendar": [
+          [
+            1
+          ]
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 3,
+            "lead": 0,
+            "capacity": 3,
+            "tokens": 1,
+            "bucket": 1,
+            "period": 3,
+            "refill": 2
+          },
+          {
+            "backlog": 0,
+            "lead": 1,
+            "capacity": 1,
+            "tokens": 1,
+            "bucket": 1,
+            "period": 3,
+            "refill": 2
+          }
+        ]
+      },
+      "expected_safe": false
+    },
+    {
+      "id": "idle-versus-atomic",
+      "calendar": [
+        [
+          -1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "initial_jobs": [
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "future_jobs": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "meaning": "raw WC starts the length-two handler at 0 and loses the next tenant reservation; waiting can serve 1 then 0 without this failure",
+      "kind": "explicit_two_schedule_illustration",
+      "monitor": {
+        "buckets": [
+          2,
+          2
+        ],
+        "capacities": [
+          2,
+          2
+        ],
+        "refill_periods": [
+          3,
+          3
+        ],
+        "initial_tokens": [
+          2,
+          2
+        ],
+        "initial_reference_queues": [
+          0,
+          0
+        ]
+      },
+      "work_conserving_atomic_schedule": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          -1
+        ]
+      ],
+      "waiting_schedule": [
+        [
+          -1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "evidence_status": "analytical illustration; not an additional enumerated pilot case"
+    },
+    {
+      "id": "two-core-obstruction",
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "max_cost": [
+        1,
+        1,
+        2
+      ],
+      "buckets": [
+        2,
+        2,
+        2
+      ],
+      "capacities": [
+        2,
+        2,
+        2
+      ],
+      "arrivals": [
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "meaning": "two cores, three compulsory service units at offset 1",
+      "kind": "atomic_capacity_witness"
+    }
+  ]
+}

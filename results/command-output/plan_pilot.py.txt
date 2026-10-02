@@ -1,0 +1,20 @@
+{
+  "cases": 35152,
+  "safe": 15604,
+  "denied": 19548,
+  "oracle_transitions": 230040,
+  "joint_oracle_cases": 2197,
+  "disagreements": 0,
+  "definition": {
+    "cores": 2,
+    "tenants": 3,
+    "reference_period": 1,
+    "plan_length": 2,
+    "valid_columns": 13,
+    "state_patterns": 16,
+    "pattern_selection": "explicit bit/phase formulas in source"
+  },
+  "cpu_seconds": 1.384090154,
+  "wall_seconds": 1.386052876000008,
+  "peak_rss_kib": 92844
+}
