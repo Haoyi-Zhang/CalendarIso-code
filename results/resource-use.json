@@ -1,61 +1,66 @@
 {
-  "scientific_workers": 1,
-  "maximum_concurrent_children": 1,
-  "intake_once": {
-    "cpu_quota_cores": 4,
-    "cgroup_memory_gib": 4,
-    "baseline_memory_mb_approx": 359,
-    "observed_swap": false,
-    "writable_gb_approx": 32
+  "scope": "Measured complete reproduction and bounded current campaign, not a total of all interactive work.",
+  "limits": {
+    "workers": 1,
+    "child_wall_timeout_seconds": 42,
+    "child_address_space_gib": 3,
+    "campaign_budget_cpu_hours": 8,
+    "project_archive_max_mib": 128
   },
-  "bounds": {
-    "campaign_cpu_hours": 8,
-    "reserved_repair_cpu_hours": 2,
-    "peak_rss_gib": 3.5,
-    "memory_gib": 4,
-    "address_space_gib_per_runner": 3,
-    "pilot_cpu_soft_seconds": 35,
-    "pilot_cpu_hard_seconds": 40,
-    "reproduction_child_wall_timeout_seconds": 42,
-    "archive_max_mib": 128
+  "complete_reproduction": {
+    "measured_child_cpu_seconds": 49.902392,
+    "wall_seconds": 50.283390955000186,
+    "max_child_rss_kib": 110888,
+    "child_processes_concurrent": 1
   },
-  "original_pilot_measurements": [
-    {
-      "name": "pilot.json",
-      "cpu_seconds": 0.6109957880000001,
-      "wall_seconds": 0.6135867119999716,
-      "peak_rss_kib": 92848
+  "runtime_family_runs": {
+    "steady": {
+      "cpu_seconds": 6.204525391,
+      "mutation_survivors": 0,
+      "mutations": 144,
+      "peak_rss_kib": 96300,
+      "run_count": 576,
+      "trace_count": 24,
+      "wall_seconds": 6.209471038000061
     },
-    {
-      "name": "multicore-pilot.json",
-      "cpu_seconds": 1.8571215280000002,
-      "wall_seconds": 1.8607234999999491,
-      "peak_rss_kib": 93356
+    "bursty": {
+      "cpu_seconds": 6.2890426139999995,
+      "mutation_survivors": 0,
+      "mutations": 144,
+      "peak_rss_kib": 96300,
+      "run_count": 576,
+      "trace_count": 24,
+      "wall_seconds": 6.291500062999944
     },
-    {
-      "name": "atomic-pilot.json",
-      "cpu_seconds": 0.24640672800000002,
-      "wall_seconds": 0.24972969599980388,
-      "peak_rss_kib": 93864
+    "phase": {
+      "cpu_seconds": 6.805325617,
+      "mutation_survivors": 0,
+      "mutations": 144,
+      "peak_rss_kib": 96304,
+      "run_count": 576,
+      "trace_count": 24,
+      "wall_seconds": 6.805929079000066
+    },
+    "alternating": {
+      "cpu_seconds": 5.5924454269999995,
+      "mutation_survivors": 0,
+      "mutations": 144,
+      "peak_rss_kib": 96320,
+      "run_count": 576,
+      "trace_count": 24,
+      "wall_seconds": 5.5929980419999765
+    },
+    "heterogeneous": {
+      "cpu_seconds": 5.664659715999999,
+      "mutation_survivors": 0,
+      "mutations": 144,
+      "peak_rss_kib": 96180,
+      "run_count": 576,
+      "trace_count": 24,
+      "wall_seconds": 5.66523152700006
     }
-  ],
-  "earlier_full_recheck_child_cpu_seconds": 5.9979890000000005,
-  "clean_scientific_commands_child_cpu_seconds": 21.049207000000003,
-  "sum_recorded_scientific_cpu_seconds": 29.761720044000004,
-  "initial_unmetered_unit_test": {
-    "observed_wall_seconds_approx": 1.022,
-    "conservative_cpu_allowance_seconds": 40,
-    "note": "Initial standalone unittest timing did not retain process CPU; allowance is not an extra measurement."
   },
-  "accounted_science_including_allowance_seconds": 69.761720044,
-  "clean_tex_child_cpu_seconds": 1.1807680000000007,
-  "maximum_recorded_scientific_child_rss_kib": 116600,
-  "rss_scope": "Linux child high-water readings; command groups may report the maximum already observed, not isolated per-command RSS. Parent and child are distinct; cgroup baseline recorded only at intake.",
-  "download_accounting": {
-    "local_network_downloaded_bytes": 0,
-    "supplied_template_bytes": 83448,
-    "browser_transfer_bytes": "not exposed by browser tool; no exact network-byte total is claimed",
-    "external_pdfs_redistributed": false
-  },
-  "non_claims": "Runtime is resource feasibility only, not comparative scheduler throughput, dataplane latency, hardware performance or a toolchain fingerprint."
+  "uncompleted_attempt": "One unsharded runtime run exceeded the tool wall budget. No partial result is counted. All five declared families were subsequently rerun completely and retained.",
+  "network": "No experiment uses network; scholarly reading used the web tool, whose transferred-byte totals are not exposed.",
+  "non_claim": "Resource feasibility, not scheduler throughput, runtime overhead, hardware latency, or a toolchain fingerprint."
 }

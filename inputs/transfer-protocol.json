@@ -1,0 +1,26 @@
+{
+  "purpose": "Differential check of the FIFO-unit-job Transfer Schedulability reduction and CRSI continuation elimination, not a hardware or upstream-runtime benchmark",
+  "selection": "Exhaustive declared finite domains, fixed before first campaign execution; no fitted parameters and no favorable-outcome selection",
+  "uniprocessor": {
+    "calendar": "Every binary owner/idle calendar of period two, both phases",
+    "horizons": [3,4],
+    "plans": "Every owner/idle word of the selected horizon",
+    "backlog": "0 through horizon, retaining plans with service count <= backlog",
+    "lead": [0,1,2],
+    "headroom": [0,1],
+    "monitor_profiles_tokens_bucket_period_refill": [[1,1,1,1],[1,2,3,2],[2,2,3,3],[0,1,2,2],[0,2,3,2],[0,2,3,3]]
+  },
+  "multiprocessor": {
+    "tenants": 3,
+    "cores": 2,
+    "calendar": "Every legal constant column; each also paired with a deterministic next column to test nonconstant calendars",
+    "plans": "Every pair of legal columns",
+    "state_profiles": [0,1,2],
+    "state_construction": "Specified deterministically in transfer_campaign.py; initial backlog >= committed work, nonzero leads and monitor phases included"
+  },
+  "oracles": ["unmodified CRSI producer", "independently coded explicit unit-job TS critical-interval condition on every legal full per-tenant arrival path", "prefix label-set inclusion"],
+  "negative_and_conservative_controls": ["zero-arrival-only check (NOT the TS method)", "saturated calendar domination (NOT the TS method)"],
+  "output": "Every case retained as JSON Lines with full snapshot, plan and decisions; aggregates kept separately",
+  "resource_limits": {"workers": 1, "address_space_gib": 3, "maximum_cpu_seconds": 240, "subprocess_wall_timeout_seconds": 260},
+  "old_campaign": "66,858 retained instances are separate and not relabeled or added to these counts"
+}

@@ -1,33 +1,76 @@
 {
-  "status": "code_audit_passed",
-  "python_files": 11,
-  "nonblank_noncomment_lines": 1104,
-  "compileall_exit_code": 0,
-  "unit_test_methods": 18,
-  "unit_test_exit_code": 0,
-  "bounded_reproduction_exit_code": 0,
+  "status": "source_checks_passed",
+  "meaning": "Actual syntax compilation and import separation; executed tests are separately recorded.",
+  "python_files": 20,
+  "nonblank_noncomment_lines": 2252,
+  "all_sources_compile": true,
+  "test_methods": {
+    "test_contracts.py": 18,
+    "test_runtime.py": 14,
+    "test_transfer.py": 12
+  },
   "producer_checker_separation": {
-    "src/oracle.py_imports_admission": false,
-    "src/plan_oracle.py_imports_commitment": false
+    "oracle_excludes_admission": true,
+    "plan_oracle_excludes_commitment": true,
+    "transfer_oracle_excludes_producer_old_oracles": true,
+    "runtime_replayer_excludes_scheduler_checkers": true
   },
-  "network_client_imports_in_src": [],
-  "dynamic_execution_tokens_in_src": {
-    "eval_calls": 0,
-    "exec_calls": 0
-  },
+  "network_client_imports": {},
   "imports": {
-    "src/plan_pilot.py": [
-      "__future__",
-      "admission",
+    "export_runtime_tables.py": [
       "argparse",
-      "commitment",
-      "itertools",
+      "json",
+      "pathlib"
+    ],
+    "reproduce.py": [
+      "__future__",
+      "argparse",
+      "filecmp",
+      "gzip",
       "json",
       "os",
       "pathlib",
-      "plan_oracle",
       "resource",
+      "subprocess",
+      "sys",
+      "tempfile",
       "time"
+    ],
+    "runtime_campaign.py": [
+      "__future__",
+      "argparse",
+      "copy",
+      "gzip",
+      "json",
+      "pathlib",
+      "random",
+      "resource",
+      "runtime",
+      "runtime_replay",
+      "sys",
+      "time"
+    ],
+    "runtime_summary.py": [
+      "__future__",
+      "argparse",
+      "gzip",
+      "json",
+      "pathlib",
+      "runtime_replay",
+      "sys"
+    ],
+    "src/admission.py": [
+      "__future__",
+      "dataclasses",
+      "typing"
+    ],
+    "src/atomic.py": [
+      "__future__"
+    ],
+    "src/atomic_oracle.py": [
+      "__future__",
+      "functools",
+      "itertools"
     ],
     "src/atomic_pilot.py": [
       "argparse",
@@ -39,6 +82,16 @@
       "pathlib",
       "resource",
       "time"
+    ],
+    "src/commitment.py": [
+      "__future__",
+      "admission",
+      "dataclasses",
+      "typing"
+    ],
+    "src/oracle.py": [
+      "__future__",
+      "typing"
     ],
     "src/pilot.py": [
       "__future__",
@@ -52,45 +105,40 @@
       "resource",
       "time"
     ],
-    "src/commitment.py": [
-      "__future__",
-      "admission",
-      "dataclasses",
-      "typing"
-    ],
     "src/plan_oracle.py": [
       "__future__",
       "itertools",
       "typing"
     ],
-    "src/atomic_oracle.py": [
+    "src/plan_pilot.py": [
       "__future__",
-      "functools",
-      "itertools"
-    ],
-    "src/atomic.py": [
-      "__future__"
-    ],
-    "src/admission.py": [
-      "__future__",
-      "dataclasses",
-      "typing"
-    ],
-    "src/oracle.py": [
-      "__future__",
-      "typing"
-    ],
-    "reproduce.py": [
-      "__future__",
+      "admission",
       "argparse",
+      "commitment",
+      "itertools",
       "json",
       "os",
       "pathlib",
+      "plan_oracle",
       "resource",
-      "subprocess",
-      "sys",
-      "tempfile",
       "time"
+    ],
+    "src/runtime.py": [
+      "__future__",
+      "admission",
+      "collections",
+      "commitment",
+      "plan_oracle",
+      "typing"
+    ],
+    "src/runtime_replay.py": [
+      "__future__",
+      "collections"
+    ],
+    "src/transfer_oracle.py": [
+      "__future__",
+      "dataclasses",
+      "typing"
     ],
     "tests/test_contracts.py": [
       "admission",
@@ -106,7 +154,40 @@
       "random",
       "sys",
       "unittest"
+    ],
+    "tests/test_runtime.py": [
+      "ast",
+      "copy",
+      "pathlib",
+      "runtime",
+      "runtime_replay",
+      "sys",
+      "unittest"
+    ],
+    "tests/test_transfer.py": [
+      "commitment",
+      "copy",
+      "dataclasses",
+      "itertools",
+      "pathlib",
+      "sys",
+      "transfer_oracle",
+      "unittest"
+    ],
+    "transfer_campaign.py": [
+      "__future__",
+      "admission",
+      "argparse",
+      "collections",
+      "commitment",
+      "itertools",
+      "json",
+      "os",
+      "pathlib",
+      "resource",
+      "sys",
+      "time",
+      "transfer_oracle"
     ]
-  },
-  "meaning": "Static source hygiene plus executed compilation, unit tests, and bounded reproduction; not a proof of absence of all defects."
+  }
 }

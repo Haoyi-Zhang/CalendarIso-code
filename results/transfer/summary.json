@@ -1,0 +1,153 @@
+{
+  "campaign": "transfer-reduction",
+  "full_campaign": true,
+  "domains": {
+    "single_core": {
+      "cases": 19584,
+      "safe": 13840,
+      "denied": 5744,
+      "traces": 78672,
+      "intervals": 727608,
+      "slackless": 118516,
+      "unsafe_traces": 29112,
+      "snapshot_false_accepts": 704,
+      "saturated_false_rejects": 64,
+      "disagreements": 0
+    },
+    "two_core": {
+      "cases": 13182,
+      "safe": 9708,
+      "denied": 3474,
+      "traces": 52738,
+      "intervals": 158214,
+      "slackless": 16212,
+      "unsafe_traces": 5292,
+      "snapshot_false_accepts": 882,
+      "saturated_false_rejects": 2322,
+      "disagreements": 0
+    }
+  },
+  "total_cases": 32766,
+  "monitor_equivalence_comparisons": 14688,
+  "disagreements": 0,
+  "examples": {
+    "snapshot_false_accept": {
+      "domain": "single_core",
+      "case": 1440,
+      "snapshot": {
+        "calendar": [
+          [
+            -1
+          ],
+          [
+            0
+          ]
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 1,
+            "bucket": 1,
+            "period": 1,
+            "refill": 1
+          }
+        ]
+      },
+      "plan": [
+        [
+          -1
+        ],
+        [
+          -1
+        ],
+        [
+          -1
+        ]
+      ],
+      "producer": {
+        "safe": false,
+        "first_failure": [
+          1,
+          0
+        ],
+        "witness": {
+          "kind": "future",
+          "arrivals": [
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "transfer": {
+        "safe": false,
+        "traces": 4,
+        "intervals": 24,
+        "slackless": 4,
+        "unsafe_traces": 2
+      },
+      "snapshot_only": true,
+      "saturated_calendar": false
+    },
+    "saturated_false_reject": {
+      "domain": "single_core",
+      "case": 1446,
+      "snapshot": {
+        "calendar": [
+          [
+            -1
+          ],
+          [
+            0
+          ]
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 1,
+            "period": 2,
+            "refill": 2
+          }
+        ]
+      },
+      "plan": [
+        [
+          -1
+        ],
+        [
+          -1
+        ],
+        [
+          -1
+        ]
+      ],
+      "producer": {
+        "safe": true,
+        "first_failure": null,
+        "witness": null
+      },
+      "transfer": {
+        "safe": true,
+        "traces": 2,
+        "intervals": 12,
+        "slackless": 0,
+        "unsafe_traces": 0
+      },
+      "snapshot_only": true,
+      "saturated_calendar": false
+    }
+  },
+  "cpu_seconds": 6.082858722999999,
+  "wall_seconds": 6.086904818999983,
+  "peak_rss_kib": 102168,
+  "interpretation": "Independent finite TS-predicate implementation, not upstream SPT runtime or a Rocq proof"
+}

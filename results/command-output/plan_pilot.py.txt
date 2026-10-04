@@ -14,7 +14,7 @@
     "state_patterns": 16,
     "pattern_selection": "explicit bit/phase formulas in source"
   },
-  "cpu_seconds": 1.384090154,
-  "wall_seconds": 1.386052876000008,
-  "peak_rss_kib": 92844
+  "cpu_seconds": 1.4369309570000002,
+  "wall_seconds": 1.4395094730000437,
+  "peak_rss_kib": 92848
 }

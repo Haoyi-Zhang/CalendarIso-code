@@ -1,0 +1,18 @@
+{
+  "question": "Does repeated snapshot certification compose with admission and execution, and what utilization is lost by immutable commitments?",
+  "scope": "Discrete unit-work simulator; no measured hardware or workload-population inference.",
+  "frozen_before_campaign": true,
+  "development_seeds": [7, 19],
+  "evaluation_seeds": [101, 211, 307, 401, 503, 601, 709, 809],
+  "families": ["steady", "bursty", "phase", "alternating", "heterogeneous"],
+  "layouts": [[4, 1], [6, 2], [8, 4]],
+  "horizon": 192,
+  "batch_lengths": [1, 2, 4, 8],
+  "main_batch_length": 4,
+  "policies": ["reservation", "urgent", "naive", "snapshot", "certified", "certified-interrupt"],
+  "primary_metrics": ["prefix_violation_slots", "avoidable_idle_core_slots", "actual_work", "final_backlog", "proposal_calls", "checker_calls", "interrupted_batches"],
+  "pairing": "All policies and batch lengths receive identical offered vectors and reference-based admissions.",
+  "selection": "Report all generated cells. No early exclusion after inspecting outcomes.",
+  "statistics": "Exact finite-protocol aggregates and paired per-trace differences; no external population confidence claim.",
+  "time_model": "No scheduler/checker overhead subtracted. Proposal counts are control decisions, not CPU-time speedups. Per-slot queue observation remains necessary for the interrupt policy."
+}

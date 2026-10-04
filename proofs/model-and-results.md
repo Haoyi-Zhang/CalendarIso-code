@@ -1,5 +1,22 @@
 # Calendar-relative service isolation
 
+
+## Attribution to the transfer-schedulability framework
+
+`proofs/transfer-schedulability.md` supplies the explicit reduction to the generic
+known-online-cost criterion in Willemsen et al., TECS 2025, DOI 10.1145/3763236.
+Reference-relative preservation and the per-trace critical-interval condition
+are prior results. CRSI is their FIFO unit-job instance, including initial lead;
+serial multicore executions project tenantwise after capacity validation.
+Arbitrary legal arrival sequences are permitted by that generic theorem.
+Theorem 1 below establishes the additional model-specific elimination of the
+monitor continuation quantifier, not a new general transfer theorem. Theorem 2's
+service invariant and FIFO completion are specializations/corollaries; its
+work-conservation proof checks physical capacity. Theorem 3 additionally proves
+causal atomic-policy existence and adversarial necessity. Its safety invariant
+is inherited from the unit-job specialization. None of these prose reductions
+is an executed Rocq proof or a firstness claim over all scheduling literature.
+
 ## Model and event order
 
 Time and work are nonnegative integers. There are n serial tenants and m identical

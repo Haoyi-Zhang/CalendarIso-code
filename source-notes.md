@@ -1,78 +1,72 @@
-# Scientific source notes and comparison boundary
+# Scientific sources and transfer comparison
 
-Read-state labels are literal: retrieving a PDF address is not a full read. No
-unavailable or partially read paper is counted as a full calibration paper. The
-external resource ledger supplies scholarly/official addresses and access dates.
-These notes retain source attribution, not private coordination material.
+## What is attributed
 
-## IX: full substantive historical source
+Reference-relative preservation is not introduced by this project. Willemsen,
+Günzel, Brandenburg, von der Brüggen, Lin and Chen, *Transfer Schedulability in
+Periodic Real-Time Systems*, TECS 24(5s), Article 132 (2025), DOI
+10.1145/3763236, is the central theoretical source. Its generic formal companion
+is available at:
+https://people.mpi-sws.org/~bbb/papers/details/emsoft25/spec/transfer.transfer_schedulability.html
 
-Adam Belay, George Prekas, Ana Klimovic, Samuel Grossman, Christos Kozyrakis and
-Edouard Bugnion, OSDI 2014, pp. 49–65. Author order and historical affiliations
-appear on the first substantive page. All substantive sections and the relevant
-PDF figures/tables were inspected; no source-system experiment was reproduced.
+The task-free core explicitly permits arbitrary valid arrival sequences and
+separate reference/online job costs. Exact-online-cost necessity and sufficiency
+are inspected at their definitions, hypotheses, proof argument and final theorem
+statements. The paper-level model is distinguished from this generic core.
+The inaccessible ACM and MPG full-article endpoints are not credited as a full
+25-page reading. No upstream artifact or Rocq proof was built or executed.
 
-Precise passages: Section 3 describes coarse control-plane provisioning and
-bounded batches; Section 4.1 explicitly leaves allocation policies to future work
-and describes dedicated elastic threads; Section 4.4 discusses ownership and
-protection; Section 5 evaluates actual networking/application implementations;
-Section 6 lists implementation limitations and future dynamic-resource work.
-The paper's general interrupt-control discussion and later prototype caveats must
-not be compressed into a blanket claim that fine-grained preemptive sharing was
-implemented. Legitimate reuse is the architectural motivation and those qualified
-source facts. The present reference calendar, ghost/reference queue, universal
-arrival quantifier, proofs and Python validation are new project work, not IX
-results. Its measured speedups are not evidence for this project.
+## Explicit reduction, not a terminology-based distinction
 
-## Transfer schedulability: indispensable unresolved comparison
+`proofs/transfer-schedulability.md` proves that cumulative work dominance is
+completion transfer on FIFO unit milestones. Nonzero initial lead is represented
+by leading reference-cost-one/online-cost-zero jobs. Serial tenants allow
+projection from a feasible multicore execution; capacity validation is not
+provided by that projection. The universal arrival parameter admits monitor-legal
+continuations. Consequently cumulative work, unknown arrivals and multiple cores
+are not claimed as independent theoretical separations.
 
-The author publication records identify Lars Willemsen, Mario Günzel, Björn
-Brandenburg, Georg von der Brüggen, Ching-Chi Lin and Jian-Jia Chen, *Transfer
-Schedulability in Periodic Real-Time Systems*, TECS / EMSOFT 2025, DOI
-10.1145/3763236. ACM full text and a retrieved MPG repository component returned
-403 responses in this session. The article is not recorded as fully read.
+The residual model-specific obligation is exact elimination of the continuation
+language for current-backlog-only plans. The drain-before-witness proof gives a
+zero/one-unit witness and linear scan; the monitor statistic is a corollary.
+Urgent-first service and FIFO completion are specializations. Atomic feasibility
+additionally proves one causal work-conserving policy exists for all inputs,
+using a separate nonpreemption capacity argument. The mathematical comparison
+closes that attribution question, not priority over every publication.
 
-Its primary Prosa companion source explicitly defines preservation as no job
-finishing later than in a reference. In the ideal uniprocessor formalization,
-critical jobs and slackless intervals yield a transfer criterion. The generic
-formal core is not restricted to periodic tasks, even though the article title
-mentions them. We cannot claim originality of reference-relative preservation or
-of an exact transfer condition. We inspected the central formal definitions and
-statements, but did not execute or independently verify the upstream mechanization.
+## Other sources and reading extent
 
-Candidate delta, not a novelty certification: this project demands work-prefix
-dominance (stronger than final job completion), universally quantifies unseen
-stateful token-admissible arrivals, checks a fixed known-backlog multicore plan,
-and characterizes universal atomic feasibility using possible long handlers. A
-complete comparison to the full published mechanism, reclamation literature and
-other strongest work is still required before claiming a worthwhile new paper.
+IX is the retained fully inspected substantive historical source: OSDI 2014,
+pp.49–65, architecture/batching/protection, Section 4.1 allocation-policy boundary,
+and evaluation limitations. No IX measurement or protection theorem is inherited.
+Shenango and Caladan are used at their official description level for core
+reallocation motivation. Offline Equivalence is used only at the inspected reference/model level. Exact
+non-preemptive analysis and semi-partitioned reservations have now been read in
+full; the additional TPDS global-interference paper has a full accepted-manuscript
+reading. Their distinct premises are reflected in the manuscript. SPR is
+compared for reservation-management mechanisms and its different overhead scope.
+Semi-partitioned reservations, global non-preemptive response-time analysis,
+strong/weak sustainability, Prosa and RefinedProsa support narrowly stated model
+and assurance comparisons. Entry-specific locations and metadata are recorded
+in the paper-side citation audit and `external_resources.csv`.
 
-## Other partial sources
+No partially inspected paper or abstract is counted as a full calibration item.
+The separately requested 12/5/5 full-paper calibration is not complete:
+1/12 TPDS, 1/5 influential, 2/5 adjacent, with no overlap credit.
+The full-reading matrix is `literature-calibration.md`; it distinguishes accepted
+PDFs from final publisher layouts and records the actual scope of each reading.
+That is a publication-readiness limitation, not an unresolved claim that work
+prefixes cannot be expressed in Transfer Schedulability.
 
-Selected passages of Offline Equivalence concern recreating an offline
-non-preemptive table with an online mechanism and include a hardware evaluation.
-This project neither recreates that implementation nor equates table recreation
-with prefix-service dominance. The author-hosted listing records an RTAS 2017
-Outstanding Paper Award, but without a full read it earns no award-calibration
-credit here.
+## Reuse
 
-Shenango, Caladan, SigmaOS, SPR, exact non-preemptive analysis and two TPDS sharing
-papers were located but not fully read. Their titles are comparison candidates,
-not evidence that a research gap exists. A search candidate called
-*Non-Preemptive Real-Time Multiprocessor Scheduling Beyond Work-Conserving* is RTSS
-2020, not TPDS. No title-only source or abstract counts toward the required sample.
+No external scientific code, data set or solver is integrated into the runnable
+artifact. The independent transfer interpretation is written for this project
+and uses the generic predicate as a specification. External PDFs and proof code
+are not redistributed. The exact consumed experimental inputs are the deterministic
+generators, neutral cases, transfer protocol and complete per-case JSONL records.
+Finite experiments run offline without fetching any literature.
 
-Completed calibration count: 0 of 12 TPDS, 0 of 5 influential/award, 1 of 5
-adjacent full papers. No overlap is credited. This remains a scientific-readiness
-hold, not merely a formatting task.
-
-## Reuse and exact inputs
-
-No external scientific code, workload or solver is integrated into the runnable
-artifact. The consumed scientific inputs are original deterministic generators
-and explicit toy cases, retained locally. Public source papers support the
-historical comparison, not the finite result counts. Their exact PDF bytes are
-not redistributed because broad redistribution permission was not established.
-The local artifact reproduces its own mathematical finite checks without fetching
-any literature. It does not claim to reproduce the external systems or preserve
-a complete mirror of the literature corpus.
+Continuous execution uses the inherited transfer invariant and fixed-plan
+prefix closure. Its interruption proof in `proofs/continuous-execution.md` is
+labelled a composition corollary, not a newly discovered scheduling principle.

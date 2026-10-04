@@ -21,12 +21,32 @@
       "scientific_fields_match": true
     }
   ],
-  "unit_test_methods": 18,
+  "unit_test_methods": 44,
+  "test_files": {
+    "test_contracts.py": 18,
+    "test_transfer.py": 12,
+    "test_runtime.py": 14
+  },
+  "retained_finite_cases": 66858,
+  "transfer_comparison_cases": 32766,
+  "runtime_shards": [
+    "steady",
+    "bursty",
+    "phase",
+    "alternating",
+    "heterogeneous"
+  ],
+  "runtime_traces": 120,
+  "runtime_runs": 2880,
+  "runtime_full_log_records_match": true,
+  "runtime_mutations": 720,
+  "transfer_scientific_fields_match": true,
+  "transfer_case_records_match": true,
   "seeded_general_plan_instances": 300,
   "seed": 731203,
   "child_processes_concurrent": 1,
-  "measured_child_cpu_seconds": 5.4761299999999995,
-  "wall_seconds": 5.482398787999955,
-  "max_child_rss_kib": 110376,
+  "measured_child_cpu_seconds": 49.902392,
+  "wall_seconds": 50.283390955000186,
+  "max_child_rss_kib": 110888,
   "meaning": "Agreement of finite checks and tests; not a proof-assistant result or publication-readiness decision."
 }

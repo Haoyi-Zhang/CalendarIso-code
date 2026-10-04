@@ -53,7 +53,7 @@
     "workers": 1,
     "randomness": "none"
   },
-  "cpu_seconds": 0.553355117,
-  "wall_seconds": 0.5558862210000086,
-  "peak_rss_kib": 92844
+  "cpu_seconds": 0.558799378,
+  "wall_seconds": 0.5609261170000082,
+  "peak_rss_kib": 93356
 }
