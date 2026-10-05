@@ -55,8 +55,8 @@ The separately requested 12/5/5 full-paper calibration is not complete:
 1/12 TPDS, 1/5 influential, 2/5 adjacent, with no overlap credit.
 The full-reading matrix is `literature-calibration.md`; it distinguishes accepted
 PDFs from final publisher layouts and records the actual scope of each reading.
-That is a publication-readiness limitation, not an unresolved claim that work
-prefixes cannot be expressed in Transfer Schedulability.
+The remaining calibration concerns source-reading coverage; the supplied
+reduction already expresses work prefixes in Transfer Schedulability.
 
 ## Reuse
 
