@@ -8,6 +8,7 @@
     "backlog": "0 through horizon, retaining plans with service count <= backlog",
     "lead": [0,1,2],
     "headroom": [0,1],
+    "capacity_construction": "Q_i=max(1,q_i+lead_i)+h, h in headroom. The headroom field is an increment above the minimum valid capacity; empty backlog and lead therefore give capacities 1 and 2, not 0 and 1.",
     "monitor_profiles_tokens_bucket_period_refill": [[1,1,1,1],[1,2,3,2],[2,2,3,3],[0,1,2,2],[0,2,3,2],[0,2,3,3]]
   },
   "multiprocessor": {
