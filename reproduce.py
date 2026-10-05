@@ -123,7 +123,7 @@ def main():
                  'measured_child_cpu_seconds':after.ru_utime+after.ru_stime-before.ru_utime-before.ru_stime,
                  'wall_seconds':time.perf_counter()-started,
                  'max_child_rss_kib':after.ru_maxrss,
-                 'meaning':'Agreement of finite checks and tests; not a proof-assistant result or publication-readiness decision.'}
+                 'meaning':'Agreement of finite checks and tests; not proof-assistant verification.'}
         (out/'reproduction.json').write_text(json.dumps(summary,indent=2)+'\n')
         print(json.dumps(summary,indent=2))
     except (subprocess.TimeoutExpired,RuntimeError,OSError,ValueError) as exc:
