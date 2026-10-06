@@ -58,7 +58,7 @@ def main():
                 raise RuntimeError(f'{filename}: scientific results do not match retained evidence')
             commands.append({'program':program,'exit_code':0,'cases':fresh['cases'],'scientific_fields_match':True})
         test_counts={}
-        for test_file,expected in [('test_contracts.py',18),('test_transfer.py',12),('test_runtime.py',14)]:
+        for test_file,expected in [('test_contracts.py',18),('test_transfer.py',12),('test_runtime.py',14),('test_runtime_grid.py',5)]:
             result=subprocess.run([sys.executable,str(ROOT/'tests'/test_file)],
                                   cwd=ROOT,env=env,text=True,capture_output=True,timeout=42)
             (out/(test_file+'.txt')).write_text(result.stdout+result.stderr)

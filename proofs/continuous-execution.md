@@ -87,6 +87,11 @@ a separately written event replayer imports neither. It reconstructs refills,
 admissions, queues, service and lead for the entire log, including after an unsafe
 prefix. It returns safety/utilization metrics and rejects malformed histories.
 It does not reconstruct policy decisions or authenticate producer counter fields.
+The full-log aggregator also checks that each input has the protocol's horizon
+and tenant/core dimensions, and recreates the six malformed-log rejection
+challenges for each primary interruptible trace. Reported mutation totals must
+match that declared coverage and the reconstructed rejection outcomes; they
+cannot establish rejection without replay.
 
 All finite outcomes, including both incomplete negative controls, are archived.
 Equality of useful work for the urgent and interrupting policies on this grid is

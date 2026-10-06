@@ -6,6 +6,7 @@ instrumentation, not independently reconstructed algorithm authentication.
 """
 from __future__ import annotations
 import argparse
+import copy
 import gzip
 import json
 from pathlib import Path
@@ -16,6 +17,20 @@ ROOT = Path(__file__).resolve().parent
 METRICS = ('actual_work','reference_work','admitted_work','final_backlog',
            'avoidable_idle_core_slots','core_slots')
 COUNTERS = ('proposal_calls','checker_calls','interrupted_batches','fallback_slots')
+MUTATIONS_PER_TRACE = 6
+
+
+def malformed_logs(log, tenant_count):
+    """Reconstruct the six declared rejection challenges, not producer counters."""
+    for mutation in range(MUTATIONS_PER_TRACE):
+        bad = copy.deepcopy(log)
+        if mutation == 0: bad['events'][0]['time'] = False
+        elif mutation == 1: bad['events'][-1]['admitted'][0] += 1
+        elif mutation == 2: bad['events'][-1]['queue'][0] += 1
+        elif mutation == 3: bad['events'].pop()
+        elif mutation == 4: bad['events'][-1]['served'][0] = tenant_count
+        else: bad['events'][-1]['tokens'][0] += 1
+        yield bad
 
 
 def merge(rows):
@@ -44,6 +59,12 @@ def summarize(directory, replay_all=False):
         expected_traces = {f'{family}-n{n}-m{m}-s{s}' for n,m in protocol['layouts']
                            for s in protocol['evaluation_seeds']}
         if configs.keys() != expected_traces: raise ValueError('Input grid differs from protocol')
+        for n, m in protocol['layouts']:
+            for seed in protocol['evaluation_seeds']:
+                config = configs[f'{family}-n{n}-m{m}-s{seed}']
+                if (len(config['tenants']) != n or len(config['offers']) != protocol['horizon'] or
+                        any(len(col) != m for col in config['calendar'])):
+                    raise ValueError('Input horizon or resource dimensions differ from protocol')
         trace_ids.update(configs)
         local = [json.loads(line) for line in (folder/'runs.jsonl').read_text().splitlines()]
         keyed = {(r['trace_id'],r['policy'],r['batch']):r for r in local}
@@ -58,8 +79,13 @@ def summarize(directory, replay_all=False):
         if saved['groups'] != merge(local): raise ValueError('Shard summary does not match raw rows')
         if saved['trace_count'] != len(configs) or saved['run_count'] != len(local): raise ValueError('Shard count mismatch')
         if saved['domain'] != 'evaluation': raise ValueError('Development data in evaluation')
+        expected_mutations = len(configs) * MUTATIONS_PER_TRACE
+        if (type(saved['mutations']) is not int or saved['mutations'] != expected_mutations or
+                type(saved['mutation_survivors']) is not int or
+                not 0 <= saved['mutation_survivors'] <= expected_mutations):
+            raise ValueError('Mutation coverage differs from declared six challenges per primary trace')
         if replay_all:
-            seen=set();admissions={}
+            seen=set();admissions={};checked_mutations=0;observed_survivors=0
             with gzip.open(folder/'executions.jsonl.gz','rt') as handle:
                 for line in handle:
                     record = json.loads(line);log = record['log'];t = record['trace_id']
@@ -69,11 +95,19 @@ def summarize(directory, replay_all=False):
                     metrics=replay(configs[t],log)
                     if metrics!=keyed[k]['metrics'] or log['control']!=keyed[k]['control']:
                         raise ValueError('Replayed result differs from archived row')
+                    if log['policy'] == 'certified-interrupt' and log['batch'] == protocol['main_batch_length']:
+                        for bad in malformed_logs(log, len(configs[t]['tenants'])):
+                            checked_mutations += 1
+                            try: replay(configs[t], bad)
+                            except ValueError: pass
+                            else: observed_survivors += 1
                     admitted=[e['admitted'] for e in log['events']]
                     if t in admissions: paired &= admissions[t]==admitted
                     else:admissions[t]=admitted
                     replayed+=1
             if seen != expected: raise ValueError('Missing event log')
+            if checked_mutations != saved['mutations'] or observed_survivors != saved['mutation_survivors']:
+                raise ValueError('Reconstructed rejection outcomes differ from shard record')
         rows.extend(local)
         mutations += saved['mutations'];survivors += saved['mutation_survivors']
         paired &= saved['paired_admissions']
