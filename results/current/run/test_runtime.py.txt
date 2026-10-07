@@ -1,0 +1,19 @@
+test_bad_service_rejected (__main__.RuntimeContracts.test_bad_service_rejected) ... ok
+test_exact_prefix_replanning_keeps_state (__main__.RuntimeContracts.test_exact_prefix_replanning_keeps_state) ... ok
+test_full_log_required (__main__.RuntimeContracts.test_full_log_required) ... ok
+test_illegal_suffix_not_hidden_by_early_failure (__main__.RuntimeContracts.test_illegal_suffix_not_hidden_by_early_failure) ... ok
+test_late_arrival_isolation_and_idle_interrupt (__main__.RuntimeContracts.test_late_arrival_isolation_and_idle_interrupt) ... ok
+test_naive_and_snapshot_negative_controls (__main__.RuntimeContracts.test_naive_and_snapshot_negative_controls) ... ok
+test_no_arrival_all_policies (__main__.RuntimeContracts.test_no_arrival_all_policies) ... ok
+test_proposals_do_not_rely_on_future (__main__.RuntimeContracts.test_proposals_do_not_rely_on_future) ... ok
+test_refill_and_reference_gate_pairing (__main__.RuntimeContracts.test_refill_and_reference_gate_pairing) ... ok
+test_replayer_import_separation (__main__.RuntimeContracts.test_replayer_import_separation) ... ok
+test_safe_immutable_commitment_can_idle (__main__.RuntimeContracts.test_safe_immutable_commitment_can_idle) ... ok
+test_shared_calendar_alias_not_modified (__main__.RuntimeContracts.test_shared_calendar_alias_not_modified) ... ok
+test_strict_boolean_fields (__main__.RuntimeContracts.test_strict_boolean_fields) ... ok
+test_uniprocessor_and_multicore_work_conservation (__main__.RuntimeContracts.test_uniprocessor_and_multicore_work_conservation) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.018s
+
+OK

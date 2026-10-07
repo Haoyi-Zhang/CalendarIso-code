@@ -1,0 +1,53 @@
+{
+  "status": "finite_reproduction_passed",
+  "scientific_completion": false,
+  "programs": [
+    {
+      "program": "pilot.py",
+      "exit_code": 0,
+      "cases": 31590,
+      "scientific_fields_match": true
+    },
+    {
+      "program": "plan_pilot.py",
+      "exit_code": 0,
+      "cases": 35152,
+      "scientific_fields_match": true
+    },
+    {
+      "program": "atomic_pilot.py",
+      "exit_code": 0,
+      "cases": 116,
+      "scientific_fields_match": true
+    }
+  ],
+  "unit_test_methods": 49,
+  "test_files": {
+    "test_contracts.py": 18,
+    "test_transfer.py": 12,
+    "test_runtime.py": 14,
+    "test_runtime_grid.py": 5
+  },
+  "retained_finite_cases": 66858,
+  "transfer_comparison_cases": 32766,
+  "runtime_shards": [
+    "steady",
+    "bursty",
+    "phase",
+    "alternating",
+    "heterogeneous"
+  ],
+  "runtime_traces": 120,
+  "runtime_runs": 2880,
+  "runtime_full_log_records_match": true,
+  "runtime_mutations": 720,
+  "transfer_scientific_fields_match": true,
+  "transfer_case_records_match": true,
+  "seeded_general_plan_instances": 300,
+  "seed": 731203,
+  "child_processes_concurrent": 1,
+  "measured_child_cpu_seconds": 58.42409,
+  "wall_seconds": 59.169827618,
+  "max_child_rss_kib": 34236,
+  "meaning": "Agreement of finite checks and tests; not proof-assistant verification."
+}

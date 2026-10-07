@@ -1,0 +1,23 @@
+test_atomic_certificate_mutations (__main__.AtomicTests.test_atomic_certificate_mutations) ... ok
+test_empty_calendar_and_unit_handlers (__main__.AtomicTests.test_empty_calendar_and_unit_handlers) ... ok
+test_policy_prioritizes_urgent_owner_then_fills (__main__.AtomicTests.test_policy_prioritizes_urgent_owner_then_fills) ... ok
+test_rotating_reference_and_partial_columns (__main__.AtomicTests.test_rotating_reference_and_partial_columns) ... ok
+test_two_slot_obstruction (__main__.AtomicTests.test_two_slot_obstruction) ... ok
+test_validate_entire_calendar_before_early_rejection (__main__.AtomicTests.test_validate_entire_calendar_before_early_rejection) ... ok
+test_certificate_mutations (__main__.FixedCommitmentTests.test_certificate_mutations) ... ok
+test_empty_reference_is_safe_not_work_conservation (__main__.FixedCommitmentTests.test_empty_reference_is_safe_not_work_conservation) ... ok
+test_full_shadow_buffer_then_one_arrival (__main__.FixedCommitmentTests.test_full_shadow_buffer_then_one_arrival) ... ok
+test_future_arrival_and_quiet_countercontrol (__main__.FixedCommitmentTests.test_future_arrival_and_quiet_countercontrol) ... ok
+test_invalid_states_and_plans (__main__.FixedCommitmentTests.test_invalid_states_and_plans) ... ok
+test_overhead_is_charged_not_productive (__main__.FixedCommitmentTests.test_overhead_is_charged_not_productive) ... ok
+test_queued_witness_needs_no_arrival (__main__.FixedCommitmentTests.test_queued_witness_needs_no_arrival) ... ok
+test_seeded_general_plans_and_metamorphisms (__main__.FixedCommitmentTests.test_seeded_general_plans_and_metamorphisms) ... ok
+test_service_lead_is_not_transferable (__main__.FixedCommitmentTests.test_service_lead_is_not_transferable) ... ok
+test_calendar_plan_alias_is_role_stable (__main__.IndependentPlanInputTests.test_calendar_plan_alias_is_role_stable) ... ok
+test_replay_rejects_boolean_violation_offset (__main__.SingleCoreReplayTests.test_replay_rejects_boolean_violation_offset) ... ok
+test_replay_rejects_illegal_event_after_first_failure (__main__.SingleCoreReplayTests.test_replay_rejects_illegal_event_after_first_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.374s
+
+OK

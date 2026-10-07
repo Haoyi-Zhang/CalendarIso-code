@@ -26,7 +26,28 @@ Finite executable checks corroborate the statements on their recorded domains.
 All algorithms and checks were written by the same AI research executor; separate
 implementations and clean reruns are not independent human review.
 
-## Reproduce from a clean extraction
+## Compact constant-column admission
+
+`src/constant_columns.py` admits a run represented by one multicore column and
+its length, without expanding or scanning every slot. It returns the same
+safe verdict, earliest failure and sparse witness as `certify_plan` for that
+restricted plan class. `proofs/constant-columns.md` derives the indexed test.
+From `src`, use `certify_constant(snapshot, column, length)` with the same
+`Snapshot` type as the explicit-column API.
+
+```sh
+python -B -m unittest discover -s tests
+python -B constant_campaign.py --output constant-results
+```
+
+The suite contains 52 methods, including 7,776 small run-length comparisons.
+The additional campaign checks 2,000 random cases and one 10^12-slot encoded
+run. `results/constant-columns/` retains all twelve configurations, nine paired
+elapsed-time samples each and the local environment. Long safe runs use large
+initial lead; kernel speed does not imply greater useful work or a faster
+deployed dataplane. The original changing-plan and runtime APIs are unchanged.
+
+## Full finite reproduction
 
 Requires Linux and Python 3.10 or later with its standard library. The minimum
 syntax requirement is 3.10; only the available interpreter was actually executed.

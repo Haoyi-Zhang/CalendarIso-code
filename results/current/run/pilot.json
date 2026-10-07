@@ -1,0 +1,461 @@
+{
+  "cases": 31590,
+  "safe": 22241,
+  "denied": 9349,
+  "oracle_transitions": 108827,
+  "disagreements": 0,
+  "witness_failures": 0,
+  "negative_controls": {
+    "ignore_future_arrivals": "refuted",
+    "count_all_slots": "overconservative",
+    "full_buffer_hides_violation": "refuted"
+  },
+  "limits": {
+    "calendar_lengths": [
+      1,
+      2,
+      3
+    ],
+    "calendar_alphabet": [
+      -1,
+      0,
+      1
+    ],
+    "other_backlog": [
+      0,
+      1,
+      2
+    ],
+    "other_lead": [
+      0,
+      1,
+      2
+    ],
+    "residual_tokens": [
+      0,
+      1,
+      2
+    ],
+    "refill_periods": [
+      1,
+      2,
+      3
+    ],
+    "all_refill_phases": true,
+    "batch_lengths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "other_capacity": "max(1,backlog+lead)",
+    "workers": 1,
+    "randomness": "none"
+  },
+  "cpu_seconds": 0.911531855,
+  "wall_seconds": 0.9128008099999931,
+  "peak_rss_kib": 15384,
+  "examples": [
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 2,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 1,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 2,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 3,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 1,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 3,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 4,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 1,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 4,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 5,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 1,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 5,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 2,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 2,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 2,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 3,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 2,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 3,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 4,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 2,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 4,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "state": {
+        "calendar": [
+          1
+        ],
+        "phase": 0,
+        "tenants": [
+          {
+            "backlog": 5,
+            "lead": 0,
+            "capacity": 8,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 3,
+            "refill": 3
+          },
+          {
+            "backlog": 0,
+            "lead": 0,
+            "capacity": 1,
+            "tokens": 0,
+            "bucket": 2,
+            "period": 2,
+            "refill": 1
+          }
+        ]
+      },
+      "certificate": {
+        "borrower": 0,
+        "length": 5,
+        "safe": false,
+        "rows": [
+          {
+            "tenant": 1,
+            "uncovered": 1
+          }
+        ],
+        "witness": {
+          "tenant": 1,
+          "violation_offset": 1,
+          "arrivals": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

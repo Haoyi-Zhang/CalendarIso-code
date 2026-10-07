@@ -1,0 +1,10 @@
+test_complete_small_grid_is_replayed (__main__.RuntimeGridContracts.test_complete_small_grid_is_replayed) ... ok
+test_invalid_mutation_survivor_counts_rejected (__main__.RuntimeGridContracts.test_invalid_mutation_survivor_counts_rejected) ... ok
+test_missing_mutation_attempts_rejected (__main__.RuntimeGridContracts.test_missing_mutation_attempts_rejected) ... ok
+test_self_consistent_short_horizon_rejected (__main__.RuntimeGridContracts.test_self_consistent_short_horizon_rejected) ... ok
+test_self_consistent_wrong_resource_dimensions_rejected (__main__.RuntimeGridContracts.test_self_consistent_wrong_resource_dimensions_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+OK

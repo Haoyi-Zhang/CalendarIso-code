@@ -1,0 +1,16 @@
+{
+  "domain": "evaluation",
+  "trace_count": 24,
+  "run_count": 576,
+  "main_runs": 144,
+  "executed_slots": 110592,
+  "paired_admissions": true,
+  "safety_failures": [],
+  "work_conservation_failures": [],
+  "mutations": 144,
+  "mutation_survivors": 0,
+  "cpu_seconds": 7.151609483,
+  "wall_seconds": 7.152407690000018,
+  "peak_rss_kib": 21124,
+  "interpretation": "Finite synthetic protocol only; zero-overhead discrete time; no hardware or population inference."
+}

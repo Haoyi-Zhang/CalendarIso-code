@@ -1,0 +1,59 @@
+{
+  "cases": 31590,
+  "safe": 22241,
+  "denied": 9349,
+  "oracle_transitions": 108827,
+  "disagreements": 0,
+  "witness_failures": 0,
+  "negative_controls": {
+    "ignore_future_arrivals": "refuted",
+    "count_all_slots": "overconservative",
+    "full_buffer_hides_violation": "refuted"
+  },
+  "limits": {
+    "calendar_lengths": [
+      1,
+      2,
+      3
+    ],
+    "calendar_alphabet": [
+      -1,
+      0,
+      1
+    ],
+    "other_backlog": [
+      0,
+      1,
+      2
+    ],
+    "other_lead": [
+      0,
+      1,
+      2
+    ],
+    "residual_tokens": [
+      0,
+      1,
+      2
+    ],
+    "refill_periods": [
+      1,
+      2,
+      3
+    ],
+    "all_refill_phases": true,
+    "batch_lengths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "other_capacity": "max(1,backlog+lead)",
+    "workers": 1,
+    "randomness": "none"
+  },
+  "cpu_seconds": 0.911531855,
+  "wall_seconds": 0.9128008099999931,
+  "peak_rss_kib": 15384
+}

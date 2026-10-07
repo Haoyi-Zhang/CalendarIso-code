@@ -1,0 +1,2194 @@
+{
+  "cases": 116,
+  "denied": 40,
+  "states": 15465,
+  "schedule_edges": 67975,
+  "disagreements": 0,
+  "method": "all FIFO arrival compositions, forall arrivals / exists work-conserving dispatch, initially empty with full buckets",
+  "cpu_seconds": 0.333923888,
+  "wall_seconds": 0.3339009590000046,
+  "peak_rss_kib": 14772,
+  "workers": 1,
+  "records": [
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 74,
+      "schedule_edges": 126
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 100,
+      "schedule_edges": 165
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 88,
+      "schedule_edges": 159
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 120,
+      "schedule_edges": 208
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        1
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 58,
+      "schedule_edges": 147
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        2
+      ],
+      "horizon": 3,
+      "safe": false,
+      "states": 24,
+      "schedule_edges": 28
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        1
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 78,
+      "schedule_edges": 220
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        2
+      ],
+      "horizon": 3,
+      "safe": false,
+      "states": 30,
+      "schedule_edges": 35
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        1
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 58,
+      "schedule_edges": 231
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        2
+      ],
+      "horizon": 3,
+      "safe": true,
+      "states": 78,
+      "schedule_edges": 331
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        1
+      ],
+      "horizon": 3,
+      "safe": false,
+      "states": 35,
+      "schedule_edges": 107
+    },
+    {
+      "cores": 1,
+      "tenants": 2,
+      "calendar": [
+        [
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        2
+      ],
+      "horizon": 3,
+      "safe": false,
+      "states": 46,
+      "schedule_edges": 151
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 153,
+      "schedule_edges": 243
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 199,
+      "schedule_edges": 324
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 187,
+      "schedule_edges": 324
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 246,
+      "schedule_edges": 432
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 187,
+      "schedule_edges": 324
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 244,
+      "schedule_edges": 432
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 229,
+      "schedule_edges": 432
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 303,
+      "schedule_edges": 576
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 111,
+      "schedule_edges": 315
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 147,
+      "schedule_edges": 420
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 135,
+      "schedule_edges": 420
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 133,
+      "schedule_edges": 207
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 148,
+      "schedule_edges": 468
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 197,
+      "schedule_edges": 624
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 180,
+      "schedule_edges": 624
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 173,
+      "schedule_edges": 270
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 111,
+      "schedule_edges": 315
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 147,
+      "schedule_edges": 436
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 148,
+      "schedule_edges": 468
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 197,
+      "schedule_edges": 646
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 135,
+      "schedule_edges": 420
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 171,
+      "schedule_edges": 533
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 180,
+      "schedule_edges": 624
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 228,
+      "schedule_edges": 784
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 111,
+      "schedule_edges": 427
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 148,
+      "schedule_edges": 618
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 147,
+      "schedule_edges": 584
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 197,
+      "schedule_edges": 844
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 135,
+      "schedule_edges": 588
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 180,
+      "schedule_edges": 849
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 177,
+      "schedule_edges": 790
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          -1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 237,
+      "schedule_edges": 1138
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 111,
+      "schedule_edges": 315
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 147,
+      "schedule_edges": 420
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 135,
+      "schedule_edges": 420
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 133,
+      "schedule_edges": 207
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 148,
+      "schedule_edges": 468
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 197,
+      "schedule_edges": 624
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 180,
+      "schedule_edges": 624
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 173,
+      "schedule_edges": 270
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 86,
+      "schedule_edges": 411
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 59,
+      "schedule_edges": 73
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 612
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 77,
+      "schedule_edges": 95
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 612
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 77,
+      "schedule_edges": 94
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 154,
+      "schedule_edges": 912
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 101,
+      "schedule_edges": 123
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 86,
+      "schedule_edges": 579
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 836
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 65,
+      "schedule_edges": 244
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 86,
+      "schedule_edges": 352
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 892
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 154,
+      "schedule_edges": 1285
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 83,
+      "schedule_edges": 330
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          0,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 110,
+      "schedule_edges": 476
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 111,
+      "schedule_edges": 315
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 147,
+      "schedule_edges": 436
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 148,
+      "schedule_edges": 468
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 197,
+      "schedule_edges": 646
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 135,
+      "schedule_edges": 420
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 171,
+      "schedule_edges": 533
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 180,
+      "schedule_edges": 624
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 228,
+      "schedule_edges": 784
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 86,
+      "schedule_edges": 411
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 59,
+      "schedule_edges": 73
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 612
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 77,
+      "schedule_edges": 95
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 612
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 77,
+      "schedule_edges": 94
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 154,
+      "schedule_edges": 912
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 101,
+      "schedule_edges": 123
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 86,
+      "schedule_edges": 747
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 1116
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 1116
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 154,
+      "schedule_edges": 1658
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 96,
+      "schedule_edges": 890
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 128,
+      "schedule_edges": 1328
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 128,
+      "schedule_edges": 1327
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          1,
+          2
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 171,
+      "schedule_edges": 1970
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 111,
+      "schedule_edges": 427
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 148,
+      "schedule_edges": 618
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 147,
+      "schedule_edges": 584
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 197,
+      "schedule_edges": 844
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 135,
+      "schedule_edges": 588
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 180,
+      "schedule_edges": 849
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 177,
+      "schedule_edges": 790
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          -1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 237,
+      "schedule_edges": 1138
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 86,
+      "schedule_edges": 579
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 836
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 65,
+      "schedule_edges": 244
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 86,
+      "schedule_edges": 352
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 892
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 154,
+      "schedule_edges": 1285
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 83,
+      "schedule_edges": 330
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          0
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 110,
+      "schedule_edges": 476
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 86,
+      "schedule_edges": 747
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 1116
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 115,
+      "schedule_edges": 1116
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        1,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": true,
+      "states": 154,
+      "schedule_edges": 1658
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 96,
+      "schedule_edges": 890
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        1,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 128,
+      "schedule_edges": 1328
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        1
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 128,
+      "schedule_edges": 1327
+    },
+    {
+      "cores": 2,
+      "tenants": 3,
+      "calendar": [
+        [
+          2,
+          1
+        ]
+      ],
+      "costs": [
+        2,
+        2,
+        2
+      ],
+      "horizon": 2,
+      "safe": false,
+      "states": 171,
+      "schedule_edges": 1970
+    }
+  ]
+}
