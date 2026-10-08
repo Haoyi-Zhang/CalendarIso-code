@@ -69,9 +69,12 @@ bounded by a 42-second wall timeout; the three pilots additionally use 35/40 CPU
 second limits and a 3 GiB address-space limit. The project requires enough memory
 for both the runner and one child. `results/reproduction.json` and
 `results/resource-use.json` retain the earlier Linux run with 44 test methods;
-the current suite has 49. Those host timings are not replaced by local rerun times.
+the reproducer covers the 49-method core/transfer/runtime subset. The complete
+current discovery suite contains 52 methods; its three constant-column methods
+and the 2,000-case compact-admission campaign use the separate commands above.
+Those host timings are not replaced by local rerun times.
 
-A current Ubuntu reproduction is retained under `results/current/run/`. All
+A retained Ubuntu reproduction is stored under `results/current/run/`. All
 49 tests, 66,858 core cases, 32,766 transfer cases, 2,880 runtime records, and
 720 malformed-log rejections pass the complete record comparisons. The run
 takes 59.169828 wall seconds and 58.424090 child CPU seconds; peak child RSS
