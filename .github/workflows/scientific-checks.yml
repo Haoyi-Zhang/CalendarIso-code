@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir -p scientific-output
           set -o pipefail
-          ulimit -t 600
+          ulimit -t 605
           ulimit -v 3145728
           timeout --signal=TERM --kill-after=5s 600s \
             python -B reproduce.py --output-dir scientific-output/run \

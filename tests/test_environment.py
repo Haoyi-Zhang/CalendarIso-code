@@ -1,6 +1,8 @@
 """Environment claims must come from a checked operation, not a constant label."""
+import ast
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import unittest
@@ -30,6 +32,18 @@ class EnvironmentTests(unittest.TestCase):
         result=subprocess.run(command,capture_output=True,text=True,timeout=10)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertIn('--portable',result.stdout)
+        # The CI parent must not forbid the runner's own hard CPU ceiling.
+        root=Path(__file__).resolve().parents[1]
+        runner=ast.parse((root/'reproduce.py').read_text(encoding='utf-8'))
+        hard_limits=[ast.literal_eval(keyword.value)
+                     for call in ast.walk(runner) if isinstance(call,ast.Call)
+                     and isinstance(call.func,ast.Name) and call.func.id=='configure'
+                     for keyword in call.keywords if keyword.arg=='cpu_hard']
+        self.assertEqual(len(hard_limits),1)
+        workflow=(root/'.github/workflows/scientific-checks.yml').read_text(encoding='utf-8')
+        parent_limits=re.findall(r'^\s*ulimit -t (\d+)\s*$',workflow,re.MULTILINE)
+        self.assertEqual(len(parent_limits),1)
+        self.assertGreaterEqual(int(parent_limits[0]),hard_limits[0])
 
 
 if __name__=='__main__': unittest.main(verbosity=2)
