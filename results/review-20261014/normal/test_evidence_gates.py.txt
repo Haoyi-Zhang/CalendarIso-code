@@ -1,0 +1,7 @@
+test_atomic_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_atomic_oracle_disagreement_cannot_publish) ... ok
+test_plan_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_plan_oracle_disagreement_cannot_publish) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.388s
+
+OK

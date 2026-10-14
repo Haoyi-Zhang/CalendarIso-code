@@ -1,0 +1,57 @@
+test_atomic_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_atomic_oracle_disagreement_cannot_publish) ... 
+  test_atomic_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_atomic_oracle_disagreement_cannot_publish) (module='atomic_pilot', optimized=True) ... FAIL
+test_plan_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_plan_oracle_disagreement_cannot_publish) ... 
+  test_plan_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_plan_oracle_disagreement_cannot_publish) (module='plan_pilot', optimized=True) ... FAIL
+
+======================================================================
+FAIL: test_atomic_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_atomic_oracle_disagreement_cannot_publish) (module='atomic_pilot', optimized=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\CodexProjects\wg-check\substantive-library\P036\artifact\tests\test_evidence_gates.py", line 56, in check_gate
+    self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+AssertionError: 0 == 0 : {
+  "cases": 2,
+  "denied": 0,
+  "states": 2,
+  "schedule_edges": 2,
+  "disagreements": 0,
+  "method": "all FIFO arrival compositions, forall arrivals / exists work-conserving dispatch, initially empty with full buckets",
+  "cpu_seconds": 0.0,
+  "wall_seconds": 1.6399979358538985e-05,
+  "peak_rss_kib": 0,
+  "workers": 1
+}
+
+
+======================================================================
+FAIL: test_plan_oracle_disagreement_cannot_publish (__main__.EvidenceGates.test_plan_oracle_disagreement_cannot_publish) (module='plan_pilot', optimized=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\CodexProjects\wg-check\substantive-library\P036\artifact\tests\test_evidence_gates.py", line 56, in check_gate
+    self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+AssertionError: 0 == 0 : {
+  "cases": 16,
+  "safe": 16,
+  "denied": 0,
+  "oracle_transitions": 0,
+  "joint_oracle_cases": 1,
+  "disagreements": 0,
+  "definition": {
+    "cores": 2,
+    "tenants": 3,
+    "reference_period": 1,
+    "plan_length": 2,
+    "valid_columns": 1,
+    "state_patterns": 16,
+    "pattern_selection": "explicit bit/phase formulas in source"
+  },
+  "cpu_seconds": 0.0,
+  "wall_seconds": 0.00019389999215491116,
+  "peak_rss_kib": 0
+}
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.400s
+
+FAILED (failures=2)

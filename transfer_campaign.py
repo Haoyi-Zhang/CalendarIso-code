@@ -12,7 +12,6 @@ import itertools
 import json
 import os
 from pathlib import Path
-import resource
 import sys
 import time
 
@@ -21,6 +20,7 @@ sys.path.insert(0, str(ROOT/'src'))
 from admission import Tenant
 from commitment import Snapshot, certify_plan
 from transfer_oracle import certify_by_transfer, tenant_traces, evaluate
+from experiment_env import configure, peak_rss_kib
 
 PROFILES = ((1,1,1,1),(1,2,3,2),(2,2,3,3),(0,1,2,2),(0,2,3,2),(0,2,3,3))
 
@@ -96,10 +96,7 @@ def main():
     out=args.output_dir.resolve()
     if out.exists() and any(out.iterdir()):ap.error('output directory must be empty')
     out.mkdir(parents=True,exist_ok=True)
-    if sys.platform.startswith('linux'):
-        os.sched_setaffinity(0,{min(os.sched_getaffinity(0))})
-        resource.setrlimit(resource.RLIMIT_AS,(3*1024**3,3*1024**3))
-        resource.setrlimit(resource.RLIMIT_CPU,(240,245))
+    configure(cpu_soft=240, cpu_hard=245)
     start=time.perf_counter();cpu=time.process_time()
     totals={};groups={};comparisons=0;examples={}
     with (out/'cases.jsonl').open('w') as stream:
@@ -140,7 +137,7 @@ def main():
              'monitor_equivalence_comparisons':comparisons,'disagreements':0,
              'examples':examples,'cpu_seconds':time.process_time()-cpu,
              'wall_seconds':time.perf_counter()-start,
-             'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+             'peak_rss_kib':peak_rss_kib(),
              'interpretation':'Independent finite TS-predicate implementation, not upstream SPT runtime or a Rocq proof'}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     print(json.dumps({k:v for k,v in summary.items() if k!='examples'},indent=2))

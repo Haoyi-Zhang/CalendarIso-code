@@ -1,15 +1,14 @@
 """One-worker, exhaustive pilot with negative controls and measured bounds."""
 from __future__ import annotations
-import itertools, json, os, resource, time
+import itertools, json, time
 from pathlib import Path
 from admission import State, Tenant, certify
 from oracle import exhaustive, one_arrival_check, replay_witness
+from experiment_env import configure, peak_rss_kib
 
 
 def run() -> dict:
-    resource.setrlimit(resource.RLIMIT_AS, (3 * 1024**3, 3 * 1024**3))
-    resource.setrlimit(resource.RLIMIT_CPU, (35, 40))
-    os.sched_setaffinity(0, {min(os.sched_getaffinity(0))})
+    configure()
     start, cpu = time.perf_counter(), time.process_time()
     count = safe = denied = edges = mutations = 0
     saved = []
@@ -41,14 +40,17 @@ def run() -> dict:
     # Null lead/current-empty negative control: queued k blocks a future i arrival.
     state = State((0, 1), 0, (Tenant(2, 0, 4, 0, 1, 4, 4), Tenant(0, 0, 2, 1, 1, 4, 4)))
     cert = certify(state, 0, 2)
-    assert not cert['safe'] and not exhaustive(state.to_dict(), 0, 2)[0]
+    if cert['safe'] or exhaustive(state.to_dict(), 0, 2)[0]:
+        raise AssertionError('future-arrival negative control failed')
     # Counterexample to counting all slots as demanded: no new token until offset 3.
     quiet = State((0, 1), 0, (Tenant(2, 0, 4, 0, 1, 4, 4), Tenant(0, 0, 2, 0, 1, 4, 3)))
-    assert certify(quiet, 0, 2)['safe']
+    if not certify(quiet, 0, 2)['safe']:
+        raise AssertionError('quiet-token control failed')
     # Full shadow buffer cannot disable the one-arrival witness permanently.
     full = State((1, 1, 1), 0, (Tenant(3, 0, 4, 0, 1, 4, 4), Tenant(0, 1, 1, 1, 1, 4, 4)))
     cf = certify(full, 0, 3)
-    assert not cf['safe'] and cf['witness']['arrivals'] == [[1, 1, 1]]
+    if cf['safe'] or cf['witness']['arrivals'] != [[1, 1, 1]]:
+        raise AssertionError('full-buffer witness control failed')
     return {'cases': count, 'safe': safe, 'denied': denied, 'oracle_transitions': edges,
             'disagreements': 0, 'witness_failures': 0,
             'negative_controls': {'ignore_future_arrivals': 'refuted', 'count_all_slots': 'overconservative',
@@ -58,7 +60,7 @@ def run() -> dict:
                        'refill_periods': [1,2,3], 'all_refill_phases': True, 'batch_lengths': [1,2,3,4,5],
                        'other_capacity': 'max(1,backlog+lead)', 'workers': 1, 'randomness': 'none'},
             'cpu_seconds': time.process_time()-cpu, 'wall_seconds': time.perf_counter()-start,
-            'peak_rss_kib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+            'peak_rss_kib': peak_rss_kib(),
             'examples': saved}
 
 if __name__ == '__main__':

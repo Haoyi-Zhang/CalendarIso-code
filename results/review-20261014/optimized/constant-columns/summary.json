@@ -1,0 +1,101 @@
+{
+  "agreement_cases": 2000,
+  "large_integer_case": true,
+  "rows": [
+    {
+      "tenants": 8,
+      "cores": 1,
+      "period": 16,
+      "length": 64,
+      "median_paired_explicit_over_run_length": 2.458839874956582
+    },
+    {
+      "tenants": 8,
+      "cores": 1,
+      "period": 16,
+      "length": 4096,
+      "median_paired_explicit_over_run_length": 101.28063943161634
+    },
+    {
+      "tenants": 8,
+      "cores": 1,
+      "period": 16,
+      "length": 65536,
+      "median_paired_explicit_over_run_length": 1150.4800995024875
+    },
+    {
+      "tenants": 8,
+      "cores": 4,
+      "period": 16,
+      "length": 64,
+      "median_paired_explicit_over_run_length": 3.5845746765974127
+    },
+    {
+      "tenants": 8,
+      "cores": 4,
+      "period": 16,
+      "length": 4096,
+      "median_paired_explicit_over_run_length": 174.1403133903134
+    },
+    {
+      "tenants": 8,
+      "cores": 4,
+      "period": 16,
+      "length": 65536,
+      "median_paired_explicit_over_run_length": 1831.0089766606823
+    },
+    {
+      "tenants": 64,
+      "cores": 1,
+      "period": 16,
+      "length": 64,
+      "median_paired_explicit_over_run_length": 1.2582762890451604
+    },
+    {
+      "tenants": 64,
+      "cores": 1,
+      "period": 16,
+      "length": 4096,
+      "median_paired_explicit_over_run_length": 21.583577176298462
+    },
+    {
+      "tenants": 64,
+      "cores": 1,
+      "period": 16,
+      "length": 65536,
+      "median_paired_explicit_over_run_length": 305.38378378378377
+    },
+    {
+      "tenants": 64,
+      "cores": 4,
+      "period": 16,
+      "length": 64,
+      "median_paired_explicit_over_run_length": 1.4842422581529187
+    },
+    {
+      "tenants": 64,
+      "cores": 4,
+      "period": 16,
+      "length": 4096,
+      "median_paired_explicit_over_run_length": 39.898036627619206
+    },
+    {
+      "tenants": 64,
+      "cores": 4,
+      "period": 16,
+      "length": 65536,
+      "median_paired_explicit_over_run_length": 550.5170421721548
+    }
+  ],
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.28000-SP0",
+    "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+    "timer": "perf_counter_ns",
+    "pairs": 9,
+    "affinity": {
+      "windows_process_mask": 1
+    },
+    "seed": 360071
+  }
+}

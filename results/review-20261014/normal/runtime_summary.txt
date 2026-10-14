@@ -1,0 +1,52 @@
+{
+  "protocol_complete": true,
+  "traces": 120,
+  "runs": 2880,
+  "main_runs": 720,
+  "executed_slots": 552960,
+  "paired_work_against_urgent": {
+    "reservation": {
+      "lower": 110,
+      "equal": 10,
+      "higher": 0,
+      "sum_delta": -1376
+    },
+    "urgent": {
+      "lower": 0,
+      "equal": 120,
+      "higher": 0,
+      "sum_delta": 0
+    },
+    "naive": {
+      "lower": 84,
+      "equal": 36,
+      "higher": 0,
+      "sum_delta": -403
+    },
+    "snapshot": {
+      "lower": 90,
+      "equal": 30,
+      "higher": 0,
+      "sum_delta": -369
+    },
+    "certified": {
+      "lower": 48,
+      "equal": 72,
+      "higher": 0,
+      "sum_delta": -97
+    },
+    "certified-interrupt": {
+      "lower": 0,
+      "equal": 120,
+      "higher": 0,
+      "sum_delta": 0
+    }
+  },
+  "paired_admissions": true,
+  "safety_failures": [],
+  "work_conservation_failures": [],
+  "mutations": 720,
+  "mutation_survivors": 0,
+  "interpretation": "Complete frozen finite synthetic protocol; exact descriptive aggregates; no device or statistical-population claim."
+}
+Complete archived logs independently replayed: 2880

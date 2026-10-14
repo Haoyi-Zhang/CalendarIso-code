@@ -40,7 +40,7 @@ python -B -m unittest discover -s tests
 python -B constant_campaign.py --output constant-results
 ```
 
-The suite contains 52 methods, including 7,776 small run-length comparisons.
+The suite contains 59 methods, including 7,776 small run-length comparisons.
 The additional campaign checks 2,000 random cases and one 10^12-slot encoded
 run. `results/constant-columns/` retains all twelve configurations, nine paired
 elapsed-time samples each and the local environment. Long safe runs use large
@@ -49,7 +49,7 @@ deployed dataplane. The original changing-plan and runtime APIs are unchanged.
 
 ## Full finite reproduction
 
-Requires Linux and Python 3.10 or later with its standard library. The minimum
+Default resource-enforced execution requires Linux and Python 3.10 or later with its standard library. The minimum
 syntax requirement is 3.10; only the available interpreter was actually executed.
 No dependency installation or network access is required.
 
@@ -58,8 +58,8 @@ python reproduce.py
 ```
 
 This runs the three retained exact pilots, the additional 32,766-case transfer
-comparison, 18 retained contract tests, 12 transfer-specific tests, 14 runtime
-tests, five protocol-grid regressions, and the complete 120-input / 2,880-run
+comparison, all 59 current tests, compact-column agreement/timing,
+the same-input workflow-cost comparison, and the complete 120-input / 2,880-run
 continuous campaign in five shards. It checks
 all deterministic scientific fields, every transfer record, all runtime inputs
 and run rows, and the decoded full execution histories. Independent aggregation
@@ -69,9 +69,9 @@ bounded by a 42-second wall timeout; the three pilots additionally use 35/40 CPU
 second limits and a 3 GiB address-space limit. The project requires enough memory
 for both the runner and one child. `results/reproduction.json` and
 `results/resource-use.json` retain the earlier Linux run with 44 test methods;
-the reproducer covers the 49-method core/transfer/runtime subset. The complete
-current discovery suite contains 52 methods; its three constant-column methods
-and the 2,000-case compact-admission campaign use the separate commands above.
+the retained later Ubuntu record covers 49 core/transfer/runtime methods.
+The current default covers all 59 methods and the compact-admission campaign,
+including seven new optimization/environment/comparator checks.
 Those host timings are not replaced by local rerun times.
 
 A retained Ubuntu reproduction is stored under `results/current/run/`. All
@@ -88,6 +88,39 @@ To retain fresh measurements, use an empty, separate output directory:
 ```sh
 python reproduce.py --output-dir fresh-results
 ```
+
+For an explicitly portable local run, use `python -B reproduce.py --portable
+--output-dir fresh-portable`. Use `python -B -O reproduce.py --portable
+--output-dir fresh-optimized` for the same complete workflow under optimization;
+the runner propagates `-O` to children. This does not install anything. On Windows,
+CPU affinity is checked through the native API for the owned process. Linux CPU
+and address-space limits and child CPU/RSS totals are unavailable, recorded as
+null, never copied from historical Ubuntu. Every child still has a 42-second wall
+deadline. JSONL equality normalizes host line endings only; gzip decoded histories
+remain exact byte comparisons. All other literal record characters must match.
+
+## Current optimization repair and complete cost baseline
+
+Two deliberately inconsistent one-column oracle fixtures demonstrate a real
+publication-gate defect: normal Python rejected, but `-O` removed `assert` checks
+and allowed reports with zero disagreements. Producer/oracle comparisons,
+certificate/witness replay, joint checks and negative controls now use explicit
+exceptions. Fixtures are not measurements and do not replace the real oracles.
+
+`workflow_cost.py --output-dir NEW_DIRECTORY` reuses all 120 retained inputs,
+batch four, urgent-first and certified interruption, three alternating pairs.
+Validation, dispatch, proposals/certification/sparse-checking where used, events,
+full independent replay, serialization and digest calculation are timed; disk I/O
+is outside the timer. All inputs, 720 samples, full outputs and their digests are
+retained. Useful-work equality is an observed result, not an acceptance premise
+or a claim of global optimality. CPU samples are aggregated because short Windows
+measurements can round to zero. No native OS/dataplane scheduler is benchmarked.
+
+`results/review-20261014/` separates current normal/optimized receipts and raw
+results from untouched historical evidence. Its README identifies the primary
+timing run, failed attempt and red controls. Local complete-workflow cost is
+higher than urgent-first despite equal useful work; do not substitute compact
+kernel speed ratios or proposal counts for an end-to-end gain.
 
 Expected main enumeration counts are **31,590**, **35,152**, and **116**, with no
 producer/oracle disagreement. The tests additionally use 300 fixed-seed general

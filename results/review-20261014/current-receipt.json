@@ -1,0 +1,623 @@
+{
+  "project": "P036 CalendarIso / TPDS",
+  "status": "bounded_candidate_repair_complete",
+  "closed_loop_complete": false,
+  "iteration_loop_complete": false,
+  "original_files": 143,
+  "source_audit": [
+    {
+      "path": "artifact/.github/scripts/check_repository.py",
+      "sha256": "4f99c3155f57d16acdd49b8a714811ee87082cb80c9ea5f80f4ab2c1910d13e1",
+      "imports": [
+        "__future__",
+        "ast",
+        "json",
+        "os",
+        "pathlib",
+        "tomllib"
+      ]
+    },
+    {
+      "path": "artifact/constant_campaign.py",
+      "sha256": "b2f8c0beb58b209c01bd1252bdeb8ef44aa64da7111e22d9466a26c10022a74a",
+      "imports": [
+        "__future__",
+        "admission",
+        "argparse",
+        "commitment",
+        "constant_columns",
+        "ctypes",
+        "experiment_env",
+        "json",
+        "pathlib",
+        "platform",
+        "random",
+        "statistics",
+        "sys",
+        "time"
+      ]
+    },
+    {
+      "path": "artifact/export_runtime_tables.py",
+      "sha256": "b4dabdcb940507d22bd154acf2b402f980df4daf749cceca7231f39cd6c48225",
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "artifact/reproduce.py",
+      "sha256": "0c6156e90ceb34c6ab5147ef8ca102025ebf7639b2283e67a8847b406ee7b82d",
+      "imports": [
+        "__future__",
+        "argparse",
+        "experiment_env",
+        "filecmp",
+        "gzip",
+        "json",
+        "os",
+        "pathlib",
+        "resource",
+        "subprocess",
+        "sys",
+        "tempfile",
+        "time"
+      ]
+    },
+    {
+      "path": "artifact/runtime_campaign.py",
+      "sha256": "c43e8a808ee8ffd7369f2e3949bf2e4818db6a458d2dde22dfbd1b9762093c7c",
+      "imports": [
+        "__future__",
+        "argparse",
+        "copy",
+        "experiment_env",
+        "gzip",
+        "json",
+        "pathlib",
+        "random",
+        "runtime",
+        "runtime_replay",
+        "sys",
+        "time"
+      ]
+    },
+    {
+      "path": "artifact/runtime_summary.py",
+      "sha256": "fab8b989276ef799fca70b54f2c54c40836b6d855cc9229968b21c09e4591d90",
+      "imports": [
+        "__future__",
+        "argparse",
+        "copy",
+        "gzip",
+        "json",
+        "pathlib",
+        "runtime_replay",
+        "sys"
+      ]
+    },
+    {
+      "path": "artifact/src/admission.py",
+      "sha256": "e237866855ee08292455277d227ae709ea41787084effddc7f9c65a222467610",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "path": "artifact/src/atomic.py",
+      "sha256": "4de4b12f6112aab029ae896ce302683cceff3db03f702ab9f9201902d0216dcf",
+      "imports": [
+        "__future__"
+      ]
+    },
+    {
+      "path": "artifact/src/atomic_oracle.py",
+      "sha256": "4889919d73e66a2ad6d487b7bec11ec6e3403918eadaf334ff1eee3929681dcc",
+      "imports": [
+        "__future__",
+        "functools",
+        "itertools"
+      ]
+    },
+    {
+      "path": "artifact/src/atomic_pilot.py",
+      "sha256": "d239782b06c293ff69ce2e2408da94cbe8eda69af64f52b6d95753a5e09f78b6",
+      "imports": [
+        "argparse",
+        "atomic",
+        "atomic_oracle",
+        "experiment_env",
+        "itertools",
+        "json",
+        "pathlib",
+        "time"
+      ]
+    },
+    {
+      "path": "artifact/src/commitment.py",
+      "sha256": "380ab22c6c5ea4bd1fe4bd12871dbe24faddee759ac969a0d608143927b89848",
+      "imports": [
+        "__future__",
+        "admission",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "path": "artifact/src/constant_columns.py",
+      "sha256": "ef1727fe96bab1a3fd0dc39bfaa3c53cf318913150ce7d24888e068ae799567b",
+      "imports": [
+        "__future__",
+        "bisect",
+        "commitment"
+      ]
+    },
+    {
+      "path": "artifact/src/experiment_env.py",
+      "sha256": "fa243f28236a5561ce0a65705297431f1508a8922b37b75a4e2acfee7ec8096d",
+      "imports": [
+        "ctypes",
+        "os",
+        "platform",
+        "resource",
+        "sys"
+      ]
+    },
+    {
+      "path": "artifact/src/oracle.py",
+      "sha256": "a1fd2ce562e4d58a982e56a0492eeb6f81a11bfaddc9a0ef409904c1112d68d9",
+      "imports": [
+        "__future__",
+        "typing"
+      ]
+    },
+    {
+      "path": "artifact/src/pilot.py",
+      "sha256": "9e5ebc954ee71ac196fa4ee2d61e0750884047d74747f6e887691b18080cca14",
+      "imports": [
+        "__future__",
+        "admission",
+        "argparse",
+        "experiment_env",
+        "itertools",
+        "json",
+        "oracle",
+        "pathlib",
+        "time"
+      ]
+    },
+    {
+      "path": "artifact/src/plan_oracle.py",
+      "sha256": "bf8ae05b0048cfe277722253e750635954487bdfd3c9d25f5ac4df5c9e6607f3",
+      "imports": [
+        "__future__",
+        "itertools",
+        "typing"
+      ]
+    },
+    {
+      "path": "artifact/src/plan_pilot.py",
+      "sha256": "53d60ac80a5034d70e3339f687051db7ed017748395d4239d71e97293488ca4d",
+      "imports": [
+        "__future__",
+        "admission",
+        "argparse",
+        "commitment",
+        "experiment_env",
+        "itertools",
+        "json",
+        "pathlib",
+        "plan_oracle",
+        "time"
+      ]
+    },
+    {
+      "path": "artifact/src/runtime.py",
+      "sha256": "49f0e125b5a2edff9cd79cc5b8b4ce6685a1f690fbce8ddc1bb6d3dcd514a230",
+      "imports": [
+        "__future__",
+        "admission",
+        "collections",
+        "commitment",
+        "plan_oracle",
+        "typing"
+      ]
+    },
+    {
+      "path": "artifact/src/runtime_replay.py",
+      "sha256": "9a3fcbb324a5afc71a9b5ef682e40f37f99daa349782b8fe0fbd36bf0a3f1d89",
+      "imports": [
+        "__future__",
+        "collections"
+      ]
+    },
+    {
+      "path": "artifact/src/transfer_oracle.py",
+      "sha256": "58ae8ee2b59abf47cb897259f68d467d2a7e2a4b916a74b4def1e14eb0952d51",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_constant_columns.py",
+      "sha256": "f8c50ee1aed4abc16a7228dd8b7c7b0b89b2aa4606c80e78f8b6f81f7c18d517",
+      "imports": [
+        "admission",
+        "commitment",
+        "constant_columns",
+        "itertools",
+        "pathlib",
+        "sys",
+        "unittest"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_contracts.py",
+      "sha256": "5bf54a2726326f701f675e7f8f8679fedf8256930d08ba61b016928dfbe81261",
+      "imports": [
+        "admission",
+        "atomic",
+        "atomic_oracle",
+        "commitment",
+        "copy",
+        "itertools",
+        "json",
+        "oracle",
+        "pathlib",
+        "plan_oracle",
+        "random",
+        "sys",
+        "unittest"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_environment.py",
+      "sha256": "0317f4e1d24eeecedadd91d0c6e4fabbcddb7b20752e5b1ef4a8c529febe8827",
+      "imports": [
+        "experiment_env",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "unittest",
+        "unittest.mock"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_evidence_gates.py",
+      "sha256": "ec0b134fad132c580140dae72f0cf50c486ebe416984d631761978ac1c33774b",
+      "imports": [
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "tempfile",
+        "unittest"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_runtime.py",
+      "sha256": "7748ced001b6f4c090fe6bddfe3b00e04daef512495533bc3e00d5d269785bb4",
+      "imports": [
+        "ast",
+        "copy",
+        "pathlib",
+        "runtime",
+        "runtime_replay",
+        "sys",
+        "unittest"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_runtime_grid.py",
+      "sha256": "0ba0733cacf648a6bb712495238bfade1059d6357db15529d4cdca842c63a6db",
+      "imports": [
+        "io",
+        "json",
+        "pathlib",
+        "runtime",
+        "runtime_replay",
+        "runtime_summary",
+        "sys",
+        "unittest",
+        "unittest.mock"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_transfer.py",
+      "sha256": "08e5a826237f2cb75a381ca110535bd3585481cf9852127876e049635fa4398e",
+      "imports": [
+        "commitment",
+        "copy",
+        "dataclasses",
+        "itertools",
+        "pathlib",
+        "sys",
+        "transfer_oracle",
+        "unittest"
+      ]
+    },
+    {
+      "path": "artifact/tests/test_workflow_cost.py",
+      "sha256": "5e9ddf5e1df38b829ee38adbb0589a3a5cc5a298d37ee8a5b0acf56d65a825c3",
+      "imports": [
+        "copy",
+        "pathlib",
+        "sys",
+        "unittest",
+        "workflow_cost"
+      ]
+    },
+    {
+      "path": "artifact/transfer_campaign.py",
+      "sha256": "09679c88b9d8ab7d6d5a5736635f3c99ac9f0d676331fd754519453cc52abf94",
+      "imports": [
+        "__future__",
+        "admission",
+        "argparse",
+        "collections",
+        "commitment",
+        "experiment_env",
+        "itertools",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "time",
+        "transfer_oracle"
+      ]
+    },
+    {
+      "path": "artifact/workflow_cost.py",
+      "sha256": "82520b82ed24e2447807bf4f2e86babb15de722ec1dc13dc715247907e003fc5",
+      "imports": [
+        "argparse",
+        "experiment_env",
+        "gzip",
+        "hashlib",
+        "json",
+        "pathlib",
+        "runtime",
+        "runtime_replay",
+        "statistics",
+        "sys",
+        "time"
+      ]
+    }
+  ],
+  "pdfs": {
+    "main.pdf": {
+      "sha256": "06ad3efae2581ce5c28202c627b6e648968562ef6470b5fa79d15e113321ab54",
+      "pages": 12
+    },
+    "supplement.pdf": {
+      "sha256": "60fd9c36c1d434be7aa88ab1814d11ae987ccfb9a71fbdd54666a2951a879939",
+      "pages": 7
+    }
+  },
+  "runs": {
+    "normal": {
+      "status": "finite_reproduction_passed",
+      "scientific_completion": false,
+      "programs": [
+        {
+          "program": "pilot.py",
+          "exit_code": 0,
+          "cases": 31590,
+          "scientific_fields_match": true
+        },
+        {
+          "program": "plan_pilot.py",
+          "exit_code": 0,
+          "cases": 35152,
+          "scientific_fields_match": true
+        },
+        {
+          "program": "atomic_pilot.py",
+          "exit_code": 0,
+          "cases": 116,
+          "scientific_fields_match": true
+        },
+        {
+          "program": "constant_campaign.py",
+          "exit_code": 0,
+          "scope": "local model cost/agreement; not historical timing equality"
+        },
+        {
+          "program": "workflow_cost.py",
+          "exit_code": 0,
+          "scope": "local model cost/agreement; not historical timing equality"
+        }
+      ],
+      "unit_test_methods": 59,
+      "test_files": {
+        "test_contracts.py": 18,
+        "test_transfer.py": 12,
+        "test_runtime.py": 14,
+        "test_runtime_grid.py": 5,
+        "test_constant_columns.py": 3,
+        "test_evidence_gates.py": 2,
+        "test_environment.py": 3,
+        "test_workflow_cost.py": 2
+      },
+      "retained_finite_cases": 66858,
+      "transfer_comparison_cases": 32766,
+      "runtime_shards": [
+        "steady",
+        "bursty",
+        "phase",
+        "alternating",
+        "heterogeneous"
+      ],
+      "runtime_traces": 120,
+      "runtime_runs": 2880,
+      "runtime_full_log_records_match": true,
+      "runtime_mutations": 720,
+      "transfer_scientific_fields_match": true,
+      "transfer_case_records_match": true,
+      "seeded_general_plan_instances": 300,
+      "seed": 731203,
+      "child_processes_concurrent": 1,
+      "measured_child_cpu_seconds": null,
+      "wall_seconds": 59.91290379999555,
+      "max_child_rss_kib": null,
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.28000-SP0",
+        "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+        "optimize": 0,
+        "timers": [
+          "perf_counter_ns",
+          "process_time_ns"
+        ]
+      },
+      "resource_mode": {
+        "mode": "portable-explicit",
+        "affinity": {
+          "windows_process_mask": 1
+        },
+        "address_space_limit_bytes": null,
+        "cpu_limit_seconds": null
+      },
+      "child_wall_timeout_seconds": 42,
+      "optimized_children": false,
+      "meaning": "Agreement of finite checks and tests; not proof-assistant verification."
+    },
+    "optimized": {
+      "status": "finite_reproduction_passed",
+      "scientific_completion": false,
+      "programs": [
+        {
+          "program": "pilot.py",
+          "exit_code": 0,
+          "cases": 31590,
+          "scientific_fields_match": true
+        },
+        {
+          "program": "plan_pilot.py",
+          "exit_code": 0,
+          "cases": 35152,
+          "scientific_fields_match": true
+        },
+        {
+          "program": "atomic_pilot.py",
+          "exit_code": 0,
+          "cases": 116,
+          "scientific_fields_match": true
+        },
+        {
+          "program": "constant_campaign.py",
+          "exit_code": 0,
+          "scope": "local model cost/agreement; not historical timing equality"
+        },
+        {
+          "program": "workflow_cost.py",
+          "exit_code": 0,
+          "scope": "local model cost/agreement; not historical timing equality"
+        }
+      ],
+      "unit_test_methods": 59,
+      "test_files": {
+        "test_contracts.py": 18,
+        "test_transfer.py": 12,
+        "test_runtime.py": 14,
+        "test_runtime_grid.py": 5,
+        "test_constant_columns.py": 3,
+        "test_evidence_gates.py": 2,
+        "test_environment.py": 3,
+        "test_workflow_cost.py": 2
+      },
+      "retained_finite_cases": 66858,
+      "transfer_comparison_cases": 32766,
+      "runtime_shards": [
+        "steady",
+        "bursty",
+        "phase",
+        "alternating",
+        "heterogeneous"
+      ],
+      "runtime_traces": 120,
+      "runtime_runs": 2880,
+      "runtime_full_log_records_match": true,
+      "runtime_mutations": 720,
+      "transfer_scientific_fields_match": true,
+      "transfer_case_records_match": true,
+      "seeded_general_plan_instances": 300,
+      "seed": 731203,
+      "child_processes_concurrent": 1,
+      "measured_child_cpu_seconds": null,
+      "wall_seconds": 63.08475810001255,
+      "max_child_rss_kib": null,
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.28000-SP0",
+        "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+        "optimize": 1,
+        "timers": [
+          "perf_counter_ns",
+          "process_time_ns"
+        ]
+      },
+      "resource_mode": {
+        "mode": "portable-explicit",
+        "affinity": {
+          "windows_process_mask": 1
+        },
+        "address_space_limit_bytes": null,
+        "cpu_limit_seconds": null
+      },
+      "child_wall_timeout_seconds": 42,
+      "optimized_children": true,
+      "meaning": "Agreement of finite checks and tests; not proof-assistant verification."
+    }
+  },
+  "primary_workflow_cost": {
+    "inputs": 120,
+    "pairs_per_input": 3,
+    "workflow_executions": 720,
+    "higher_work": 0,
+    "equal_work": 120,
+    "lower_work": 0,
+    "median_per_input_wall_ratio": 6.126584219933761,
+    "wall_ratio_range": [
+      3.34585860299419,
+      8.882151374763563
+    ],
+    "cpu_ns_by_policy": {
+      "urgent": 1015625000,
+      "certified-interrupt": 6625000000
+    },
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.28000-SP0",
+      "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+      "optimize": 0,
+      "timers": [
+        "perf_counter_ns",
+        "process_time_ns"
+      ]
+    },
+    "resource_mode": {
+      "mode": "portable-explicit",
+      "affinity": {
+        "windows_process_mask": 1
+      },
+      "address_space_limit_bytes": null,
+      "cpu_limit_seconds": null
+    },
+    "cost_scope": "validation, scheduling/proposals, certification and independent sparse checker when used, event construction, full independent replay, JSON serialization and SHA256; no disk I/O or physical overhead charged to model slots",
+    "native_os_or_dataplane_scheduler": false,
+    "scientific_acceptance": false,
+    "aggregate_cpu_ratio": 6.523076923076923,
+    "cpu_scope": "sum of per-workflow process CPU samples; short Windows samples may round to zero, so no per-input CPU ratio is claimed"
+  },
+  "actual_scope": "Owned CPython finite-model experiments and Windows affinity API; no native OS/dataplane scheduler or public CI.",
+  "historical_evidence": "Original results preserved byte-for-byte; final inventory verifies this.",
+  "source_fulltext": "Current manuscripts/includes/proofs/code read; IX2014 full primary PDF and generic transfer companion read; TECS2025 whole article unavailable, not certified.",
+  "pdf_qa": "All 12+7 pages checked; affected pages at full size. Minor bibliography overfull vbox 4.59232pt retained; no visible clipping; underfull and no-shell-escape warning retained."
+}

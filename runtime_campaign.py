@@ -7,12 +7,12 @@ import gzip
 import json
 from pathlib import Path
 import random
-import resource
 import sys
 import time
 sys.path.insert(0, str(Path(__file__).resolve().parent/'src'))
 from runtime import execute
 from runtime_replay import replay
+from experiment_env import configure, peak_rss_kib
 ROOT=Path(__file__).resolve().parent
 
 
@@ -70,6 +70,7 @@ def main():
     ap.add_argument('--development',action='store_true')
     ap.add_argument('--family',choices=['steady','bursty','phase','alternating','heterogeneous'],help='Bounded family shard; selection is logistical, not outcome-based.')
     args=ap.parse_args()
+    configure(cpu_soft=240, cpu_hard=245)
     out=args.output_dir
     if out.exists() and any(out.iterdir()): raise SystemExit('Output directory must be empty.')
     out.mkdir(parents=True,exist_ok=True)
@@ -129,7 +130,7 @@ def main():
                  paired_admissions=paired_admissions,safety_failures=safety_failures,work_conservation_failures=wc_failures,
                  mutations=mutation_count,mutation_survivors=mutation_survivors,
                  cpu_seconds=time.process_time()-before,wall_seconds=time.perf_counter()-wall,
-                 peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+                  peak_rss_kib=peak_rss_kib(),
                  interpretation='Finite synthetic protocol only; zero-overhead discrete time; no hardware or population inference.')
     (out/'summary.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
     print(json.dumps({k:v for k,v in summary.items() if k not in ('groups','per_cell')},indent=2))

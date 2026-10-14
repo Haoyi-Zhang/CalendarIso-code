@@ -13,12 +13,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / 'src'))
 from admission import Tenant
 from commitment import Snapshot, certify_plan
 from constant_columns import certify_constant
+from experiment_env import pin_current_process
 
 
 def run(output: Path):
     output.mkdir(parents=True, exist_ok=False)
-    if sys.platform == 'win32':
-        ctypes.windll.kernel32.SetProcessAffinityMask(ctypes.windll.kernel32.GetCurrentProcess(), 1)
+    affinity = pin_current_process()
     rng = random.Random(360071)
     checks = 0
     for case in range(2000):
@@ -45,7 +45,8 @@ def run(output: Path):
         checks += 1
     huge = Snapshot(((1,),), 0, (Tenant(10**12, 0, 10**12, 1, 1, 1, 1),
                                   Tenant(0, 10**12 - 1, 10**12, 1, 1, 1, 1)))
-    assert certify_constant(huge, (0,), 10**12)['first_failure'] == [10**12 - 1, 1]
+    if certify_constant(huge, (0,), 10**12)['first_failure'] != [10**12 - 1, 1]:
+        raise AssertionError('large encoded-length control failed')
     rows = []
     samples = []
     for n in (8, 64):
@@ -60,7 +61,8 @@ def run(output: Path):
                 # timers include their own validation and witness decisions.
                 for mode in ('explicit', 'run-length'):
                     result = certify_plan(snap, (column,) * length) if mode == 'explicit' else certify_constant(snap, column, length)
-                    assert result['safe']
+                    if not result['safe']:
+                        raise AssertionError('safe timing fixture rejected')
                 paired = []
                 for pair in range(9):
                     values = {}
@@ -70,7 +72,8 @@ def run(output: Path):
                         for _ in range(repeats):
                             result = certify_plan(snap, (column,) * length) if mode == 'explicit' else certify_constant(snap, column, length)
                         elapsed = time.perf_counter_ns() - start
-                        assert result['safe']
+                        if not result['safe']:
+                            raise AssertionError('safe timing fixture rejected')
                         values[mode] = elapsed
                         samples.append({'tenants': n, 'cores': m, 'period': period, 'length': length,
                                         'pair': pair, 'mode': mode, 'elapsed_ns': elapsed, 'repeats': repeats})
@@ -78,7 +81,7 @@ def run(output: Path):
                 rows.append({'tenants': n, 'cores': m, 'period': period, 'length': length,
                              'median_paired_explicit_over_run_length': statistics.median(paired)})
     env = {'python': sys.version, 'platform': platform.platform(), 'processor': platform.processor(),
-           'timer': 'perf_counter_ns', 'pairs': 9, 'affinity_mask': 1, 'seed': 360071}
+           'timer': 'perf_counter_ns', 'pairs': 9, 'affinity': affinity, 'seed': 360071}
     (output / 'summary.json').write_text(json.dumps({'agreement_cases': checks, 'large_integer_case': True,
                                                    'rows': rows, 'environment': env}, indent=2) + '\n')
     (output / 'samples.json').write_text(json.dumps(samples, indent=2) + '\n')

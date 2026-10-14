@@ -1,0 +1,40 @@
+{
+  "inputs": 120,
+  "pairs_per_input": 3,
+  "workflow_executions": 720,
+  "higher_work": 0,
+  "equal_work": 120,
+  "lower_work": 0,
+  "median_per_input_wall_ratio": 6.126584219933761,
+  "wall_ratio_range": [
+    3.34585860299419,
+    8.882151374763563
+  ],
+  "cpu_ns_by_policy": {
+    "urgent": 1015625000,
+    "certified-interrupt": 6625000000
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.28000-SP0",
+    "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+    "optimize": 0,
+    "timers": [
+      "perf_counter_ns",
+      "process_time_ns"
+    ]
+  },
+  "resource_mode": {
+    "mode": "portable-explicit",
+    "affinity": {
+      "windows_process_mask": 1
+    },
+    "address_space_limit_bytes": null,
+    "cpu_limit_seconds": null
+  },
+  "cost_scope": "validation, scheduling/proposals, certification and independent sparse checker when used, event construction, full independent replay, JSON serialization and SHA256; no disk I/O or physical overhead charged to model slots",
+  "native_os_or_dataplane_scheduler": false,
+  "scientific_acceptance": false,
+  "aggregate_cpu_ratio": 6.523076923076923,
+  "cpu_scope": "sum of per-workflow process CPU samples; short Windows samples may round to zero, so no per-input CPU ratio is claimed"
+}

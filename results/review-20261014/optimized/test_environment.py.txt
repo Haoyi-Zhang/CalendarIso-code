@@ -1,0 +1,8 @@
+test_nonlinux_requires_explicit_opt_in (__main__.EnvironmentTests.test_nonlinux_requires_explicit_opt_in) ... ok
+test_portable_never_claims_linux_limits (__main__.EnvironmentTests.test_portable_never_claims_linux_limits) ... ok
+test_runner_help_imports_without_linux_resource (__main__.EnvironmentTests.test_runner_help_imports_without_linux_resource) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.050s
+
+OK

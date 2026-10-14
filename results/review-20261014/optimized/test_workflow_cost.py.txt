@@ -1,0 +1,7 @@
+test_different_information_rejected (__main__.WorkflowCostTests.test_different_information_rejected) ... ok
+test_real_paths_and_pairing (__main__.WorkflowCostTests.test_real_paths_and_pairing) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK

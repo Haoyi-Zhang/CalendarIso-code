@@ -97,3 +97,22 @@ All finite outcomes, including both incomplete negative controls, are archived.
 Equality of useful work for the urgent and interrupting policies on this grid is
 an observation, not an optimality or per-tenant latency theorem. No learned model
 is used; workload and parameter selection remain external-validity limitations.
+
+## Executed model workflow costs and the unchanged theorem premise
+
+`workflow_cost.py` reuses the exact 120 archived inputs and the same admissions
+under urgent-first and interruptible certification. Both paths include validation,
+execution/event creation, independent full replay, serialization and result
+digest; the certificate path also runs its existing proposal/certificate/sparse
+checker. Three alternating pairs retain every sample and output digest. Disk I/O
+is excluded. In the 2026-10-14 normal Windows run, useful work ties on all inputs
+while median elapsed cost is 6.13 times and aggregate process CPU 6.52 times the
+urgent path. This is a negative implementation observation, not a new theorem or
+a production/native-scheduler benchmark. Positive physical overhead has still
+not been incorporated into the slot semantics or proved feasible.
+
+The experiment gates use explicit exceptions, not optimization-removable asserts.
+They do not change the mathematical safety predicate. Two owned inconsistent
+oracle controls demonstrate the previous optimized-mode publication defect and
+now reject in both modes before emitting results. No stubbed oracle/resource
+fixture is counted as a scientific experiment or a native validation path.

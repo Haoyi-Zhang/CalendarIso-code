@@ -1,0 +1,12 @@
+{
+  "cases": 116,
+  "denied": 40,
+  "states": 15465,
+  "schedule_edges": 67975,
+  "disagreements": 0,
+  "method": "all FIFO arrival compositions, forall arrivals / exists work-conserving dispatch, initially empty with full buckets",
+  "cpu_seconds": 0.21875,
+  "wall_seconds": 0.22809140000026673,
+  "peak_rss_kib": null,
+  "workers": 1
+}
